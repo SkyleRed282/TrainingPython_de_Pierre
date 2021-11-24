@@ -16,4 +16,3 @@ if __name__ == '__main__':
     age = 33
     prenom = 'Pierre'
     print(f'Je m\'appelle {prenom} et j\'ai {age} ans.')
-
