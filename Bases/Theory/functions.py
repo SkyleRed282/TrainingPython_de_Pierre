@@ -10,6 +10,6 @@ def ask_age():
 if __name__ == '__main__':
 
     say_hello('Pierre')
-
     age = ask_age()
+
     print(f'You are {age} year(s) old')

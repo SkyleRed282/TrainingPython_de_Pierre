@@ -2,6 +2,7 @@ if __name__ == '__main__':
 
     a = 200
     b = 33
+
     if b > a:
         print("b is greater than a")
     elif a == b:
