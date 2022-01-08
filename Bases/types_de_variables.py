@@ -45,15 +45,21 @@ if __name__ == '__main__':
     my_list.append('asd')
     print(my_list)
 
+    print(' === tuple === ')
     my_tuple = ('abc', 1)
 
+    print(' === set === ')
     # set = pas de doublons
     my_set = {'a', 'a', 'b'}
     print(my_set)
 
-    my_range = range(15)
+    print(' === range === ')
+    my_range = range(0, 15, 2)
+    for x in my_range:
+        print(x, end=' ')
     print(my_range)
 
+    print(' === dict === ')
     my_dict = {
         'cle1': 'valeur1',
         2: 34
@@ -65,6 +71,10 @@ if __name__ == '__main__':
         }
     )
     print(my_dict)
+    my_dict[456] = 'abc'
+    print(my_dict)
+
+    print(my_dict.get('324', 'Vide'))
 
 
 
