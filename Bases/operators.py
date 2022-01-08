@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
     # operateur identité
     print(var1 is str)
-    True is bool
+    print(True is bool)
 
     # operateur d'appartenance
     print(' == operateur d\'appartenance == ')

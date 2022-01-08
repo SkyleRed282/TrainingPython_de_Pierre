@@ -1,5 +1,6 @@
 
 if __name__ == '__main__':
+
     # slicing
     my_str = 'abcdefgh'
     print(my_str[:3])
