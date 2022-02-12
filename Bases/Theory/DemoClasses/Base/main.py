@@ -1,5 +1,5 @@
-from Bases.Theory.DemoClasses.car import Car
-from Bases.Theory.DemoClasses.parking import Parking
+from Bases.Theory.DemoClasses.Base.car import Car
+from Bases.Theory.DemoClasses.Base.parking import Parking
 
 if __name__ == '__main__':
 

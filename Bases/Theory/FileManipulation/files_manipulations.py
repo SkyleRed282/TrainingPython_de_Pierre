@@ -2,8 +2,6 @@ import os
 
 if __name__ == '__main__':
 
-
-
     # print(type(file_data),file_data)
 
     # with open('contacts.csv') as file_pointer:
@@ -31,9 +29,8 @@ if __name__ == '__main__':
     #     with open(file_name, 'a') as file_pointer:
     #         file_pointer.write(f'{value_to_write}\n')
 
-
     with open('contacts.csv') as file_pointer:
-       list_lines = file_pointer.readlines()
+        list_lines = file_pointer.readlines()
     headers = list_lines[0].replace('\n', '').split(',')
 
     for line in list_lines[1:]:
