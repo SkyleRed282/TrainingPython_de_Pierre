@@ -74,7 +74,7 @@ if __name__ == '__main__':
     my_dict[456] = 'abc'
     print(my_dict)
 
-    print(my_dict.get('324', 'Vide'))
+    print(my_dict.get('324'))
 
 
 

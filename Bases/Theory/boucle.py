@@ -8,6 +8,7 @@ if __name__ == '__main__':
 
     print('\n\nFor ')
     for numero_lettre in range(3):  # [0, 1, 2]
+        # ['a','b', ...]
         print(ascii_lowercase[numero_lettre], end=' ')
 
     print('\n\nWhile')

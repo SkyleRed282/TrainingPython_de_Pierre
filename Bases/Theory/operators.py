@@ -22,6 +22,7 @@ if __name__ == '__main__':
     # operateurs d'assigement
     var1 = 1
     var1 += 2
+    var1 = var1 + 2
 
     # operateurs comparaison
     print(1 == 2)

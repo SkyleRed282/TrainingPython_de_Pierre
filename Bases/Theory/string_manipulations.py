@@ -2,7 +2,7 @@ if __name__ == '__main__':
 
     # slicing
     my_str = 'abcdefgha'
-    print(my_str[:3])
+    print(my_str[0:3])
     print(my_str[-1])
     print(my_str[3:6])
     print(my_str[::2])

@@ -1,6 +1,5 @@
-
-def say_hello(name):
-    print(f'Hello {name}')
+def say_hello(name: str='Lucas'):
+    print(f'Hello {name} ')
 
 
 def ask_age():
@@ -8,7 +7,6 @@ def ask_age():
 
 
 if __name__ == '__main__':
-
     say_hello('Pierre')
     age = ask_age()
 
