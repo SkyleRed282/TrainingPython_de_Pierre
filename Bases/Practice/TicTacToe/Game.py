@@ -5,7 +5,6 @@ from Bases.Practice.TicTacToe.Human import Human
 
 
 class Game:
-    player_signs = ['o', 'x']
 
     def __init__(self, player1: Player, player2: Player):
         self.player1 = player1
@@ -28,40 +27,58 @@ class Game:
     def start(self):
         print(f'New game between {self.player1.name} and {self.player2.name}')
 
+        # tant que personne n'à gagné
+        while self.check_grid_result() == None:
 
-        # tant que personne n'à gagné ou que la grille n'est pas pleine
-        # on demande au joueur actuel son prochain coup
-        # on affiche la grille
-        # on passe au joueur suivant
+            # on demande au joueur actuel son prochain coup
+
+
+            # on affiche la grille
+            # on passe au joueur suivant
 
         # afficher le résultat
-
         # demander à l'utilisateur s'il veut rejouer
 
-    def result(self):
-        # return None if no result, else the player which won
+
+    def check_grid_result(self):
+        # return None if no result, False if draw, else the player who won
         grid_lines = self.grid.cells
 
-        # test lines
-        # Pour chaque ligne
-        for line_nbr in range(len(grid_lines)):
+        # Pour chacun des joueurs, on vérifie s'il a gagné
+        for player in [self.player1, self.player2]:
+            sign = player.sign
 
-            # Pour chaque colonne
-            first_element = grid_lines[line_nbr][0]
-            same_element = True
-            if first_element != ' ':
-                for col in range(1, len(grid_lines[line_nbr])):
-                    if first_element != grid_lines[line_nbr][col]:
-                        same_element = False
-                        break
-            else:
-                same_element = False
+            # test lines
+            player_sign_3 = sign*3
 
-            if same_element:
-                # someone won...
-                pass
+            line_1_as_str = ''.join(grid_lines[0])
+            line_2_as_str = ''.join(grid_lines[1])
+            line_3_as_str = ''.join(grid_lines[2])
+            lines_as_list = [line_1_as_str, line_2_as_str,line_3_as_str]
 
+            if player_sign_3 in lines_as_list:
+                return player
 
-        # test columns
+            # test columns
+            col_1_as_str = f'{grid_lines[0][0]}{grid_lines[1][0]}{grid_lines[2][0]}'
+            col_2_as_str = f'{grid_lines[0][1]}{grid_lines[1][1]}{grid_lines[2][1]}'
+            col_3_as_str = f'{grid_lines[0][2]}{grid_lines[1][2]}{grid_lines[2][2]}'
+            cols_as_list = [col_1_as_str, col_2_as_str, col_3_as_str]
 
-        # test diagonals
+            if player_sign_3 in cols_as_list:
+                return player
+
+            # test diagonals
+            diag_hgbd_str = f'{grid_lines[0][0]}{grid_lines[1][1]}{grid_lines[2][2]}'
+            diag_hdbg_str = f'{grid_lines[0][2]}{grid_lines[1][1]}{grid_lines[2][0]}'
+
+            if player_sign_3 in [diag_hdbg_str,diag_hgbd_str]:
+                return player
+
+        # Check if grid is full
+        lines_as_list_str = ''.join(lines_as_list)
+        if ' ' in lines_as_list_str:
+            return None
+
+        return False
+

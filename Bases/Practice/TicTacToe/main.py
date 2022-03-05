@@ -7,10 +7,10 @@ if __name__ == '__main__':
     answer1 = input('AI battle? A or Human vs AI? H ')
 
     if answer1 == 'A':
-        player1 = AI()
+        player1 = AI('x')
     else:
-        player1 = Human()
-    player2 = AI()
+        player1 = Human('x')
+    player2 = AI('o')
 
     # Tant que l'utilisateur veut continuer a jouer
     user_want_to_continue = True
