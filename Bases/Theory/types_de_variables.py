@@ -54,7 +54,7 @@ if __name__ == '__main__':
     print(my_set)
 
     print(' === range === ')
-    my_range = range(0, 15, 2)
+    my_range = range(2, 15, 2)
     for x in my_range:
         print(x, end=' ')
     print(my_range)
@@ -68,13 +68,14 @@ if __name__ == '__main__':
     my_dict.update(
         {
             'cle1': 11,
+            'cle33': 123
         }
     )
     print(my_dict)
     my_dict[456] = 'abc'
     print(my_dict)
 
-    print(my_dict.get('324'))
+    print(my_dict.get('324', 'Rien'))
 
 
 
