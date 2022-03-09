@@ -2,7 +2,7 @@
 if __name__ == '__main__':
 
     # Ceci est un commentaire
-    print('b')
+    print('J\'écris par défaut dans la console')
 
     # Assignation
     var1 = 123
@@ -11,6 +11,7 @@ if __name__ == '__main__':
 
     # Assignation multiple
     x, y, z = "Orange", "Banana", "Cherry"
+    a, b, c = ["Orange", "Banana", "Cherry"]
 
     # Types de données
     print(' === types de données === ')
@@ -47,6 +48,7 @@ if __name__ == '__main__':
 
     print(' === tuple === ')
     my_tuple = ('abc', 1)
+    print(my_tuple)
 
     print(' === set === ')
     # set = pas de doublons
