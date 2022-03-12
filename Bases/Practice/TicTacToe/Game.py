@@ -19,7 +19,7 @@ class Game:
             answer = None
             while answer not in ['1', '2']:
                 answer = input('Which player shall start first? (1/2)')
-            starting_player = int(answer)
+            starting_player = int(answer)-1
         else:
             starting_player = random.randint(0, 2)
         return starting_player
