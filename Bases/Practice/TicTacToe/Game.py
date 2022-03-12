@@ -11,7 +11,7 @@ class Game:
         self.player2 = player2
         # initialiser la grille de 3x3
         self.grid = Grid()
-        self.starting_player = self.ask_who_start()
+        self.current_player = self.ask_who_start()
 
     def ask_who_start(self):
         # on demande à l'utilisateur s'il veut commencer ou laisser l'ordinateur
@@ -28,57 +28,36 @@ class Game:
         print(f'New game between {self.player1.name} and {self.player2.name}')
 
         # tant que personne n'à gagné
-        while self.check_grid_result() == None:
+        while self.grid.check_grid_result() is None:
 
             # on demande au joueur actuel son prochain coup
-
+            if self.current_player == 0:
+                index_line, index_col = self.player1.get_next_play(self.grid)
+                if index_line == -1:
+                    continue
+                self.grid.cells[index_line][index_col] = self.player1.sign
+            else:
+                index_line, index_col = self.player2.get_next_play(self.grid)
+                if index_line == -1:
+                    continue
+                self.grid.cells[index_line][index_col] = self.player2.sign
 
             # on affiche la grille
+            print(self.grid)
+
             # on passe au joueur suivant
+            if self.current_player == 0:
+                self.current_player = 1
+            else:
+                self.current_player = 0
 
         # afficher le résultat
-        # demander à l'utilisateur s'il veut rejouer
-
-
-    def check_grid_result(self):
-        # return None if no result, False if draw, else the player who won
-        grid_lines = self.grid.cells
-
-        # Pour chacun des joueurs, on vérifie s'il a gagné
-        for player in [self.player1, self.player2]:
-            sign = player.sign
-
-            # test lines
-            player_sign_3 = sign*3
-
-            line_1_as_str = ''.join(grid_lines[0])
-            line_2_as_str = ''.join(grid_lines[1])
-            line_3_as_str = ''.join(grid_lines[2])
-            lines_as_list = [line_1_as_str, line_2_as_str,line_3_as_str]
-
-            if player_sign_3 in lines_as_list:
-                return player
-
-            # test columns
-            col_1_as_str = f'{grid_lines[0][0]}{grid_lines[1][0]}{grid_lines[2][0]}'
-            col_2_as_str = f'{grid_lines[0][1]}{grid_lines[1][1]}{grid_lines[2][1]}'
-            col_3_as_str = f'{grid_lines[0][2]}{grid_lines[1][2]}{grid_lines[2][2]}'
-            cols_as_list = [col_1_as_str, col_2_as_str, col_3_as_str]
-
-            if player_sign_3 in cols_as_list:
-                return player
-
-            # test diagonals
-            diag_hgbd_str = f'{grid_lines[0][0]}{grid_lines[1][1]}{grid_lines[2][2]}'
-            diag_hdbg_str = f'{grid_lines[0][2]}{grid_lines[1][1]}{grid_lines[2][0]}'
-
-            if player_sign_3 in [diag_hdbg_str,diag_hgbd_str]:
-                return player
-
-        # Check if grid is full
-        lines_as_list_str = ''.join(lines_as_list)
-        if ' ' in lines_as_list_str:
-            return None
-
-        return False
+        result = self.grid.check_grid_result()
+        if result is False:
+            print('Draw! ')
+        else:
+            if result == self.player1.sign:
+                print(f'{self.player1.name} won! ')
+            else:
+                print(f'{self.player2.name} won! ')
 
