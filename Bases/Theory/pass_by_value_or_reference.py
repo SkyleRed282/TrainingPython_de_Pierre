@@ -14,8 +14,8 @@ def add_tuple_5(some_tuple: tuple):
 
 
 def add_string_5(some_str: str):
-    new_str = some_str + '5'
-    return new_str
+    some_str = some_str + '5'
+    return some_str
 
 
 if __name__ == '__main__':

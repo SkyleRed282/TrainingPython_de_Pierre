@@ -34,8 +34,9 @@ if __name__ == '__main__':
     print(not False)
 
     # operateur identité
+    print(' == operateur d\'identé == ')
     print(var1 is str)
-    print(True is bool)
+    print(isinstance(True, bool))
 
     # operateur d'appartenance
     print(' == operateur d\'appartenance == ')
@@ -43,4 +44,3 @@ if __name__ == '__main__':
     print('x' in ['a', 'x', 'c'])
 
     print(len('axc'))
-

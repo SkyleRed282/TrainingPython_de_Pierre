@@ -40,6 +40,7 @@ if __name__ == '__main__':
     my_list = ['a', 1, 'test', 'toto']
     print(my_list)
 
+    empty_list = []
     my_list[1] = 'gg'
     print(my_list)
 
@@ -53,6 +54,7 @@ if __name__ == '__main__':
     print(' === set === ')
     # set = pas de doublons
     my_set = {'a', 'a', 'b'}
+    empty_set = set()
     print(my_set)
 
     print(' === range === ')
@@ -62,6 +64,7 @@ if __name__ == '__main__':
     print(my_range)
 
     print(' === dict === ')
+    empty_dict = {}
     my_dict = {
         'cle1': 'valeur1',
         2: 34
