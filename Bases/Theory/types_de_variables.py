@@ -1,20 +1,20 @@
 
 if __name__ == '__main__':
 
-    # Ceci est un commentaire
-    print('J\'écris par défaut dans la console')
+    # I'm a comment
+    print('I\'m printing inside the terminal')
 
     # Assignation
     var1 = 123
     var2 = var1 + 2
     print(var2)
 
-    # Assignation multiple
+    # Multiple assignation
     x, y, z = "Orange", "Banana", "Cherry"
     a, b, c = ["Orange", "Banana", "Cherry"]
 
-    # Types de données
-    print(' === types de données === ')
+    # Data type
+    print(' === data type === ')
     my_string = 'abc'
     print(my_string[1])
     my_multiline_string = ''' 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     # Structures
     print(' === structures === ')
-    my_list = ['a', 1, 'test', 'toto']
+    my_list = ['a', 1, 'test', 'toto', 1]
     print(my_list)
 
     empty_list = []
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     print(my_set)
 
     print(' === range === ')
-    my_range = range(2, 15, 2)
+    my_range = range(2, 15, 2)  # [2, 4, 6]
     for x in my_range:
         print(x, end=' ')
     print(my_range)
@@ -80,7 +80,8 @@ if __name__ == '__main__':
     my_dict[456] = 'abc'
     print(my_dict)
 
-    print(my_dict.get('324', 'Rien'))
+    print(my_dict.get('324', 'Nothing'))
+    print(my_dict['324'])
 
 
 

@@ -9,8 +9,8 @@ if __name__ == '__main__':
     my_list = ['2']
     my_empty_list = []
 
-    if my_empty_list:
-        pass
+    if my_list:
+        print('List is not empty')
     else:
         print('List is empty')
 
@@ -36,13 +36,13 @@ if __name__ == '__main__':
     print(True or False)
     print(not False)
 
-    # operateur identité
-    print(' == operateur d\'identé ==')
+    # identity operators
+    print(' == identity operators ==')
     print(type(var1) is int)
     print(isinstance(True, bool))
 
-    # operateur d'appartenance
-    print(' == operateur d\'appartenance ==')
+    # membership operator
+    print(' == membership operator ==')
     print('x' in 'axc')
     print('x' in ['a', 'x', 'c'])
 

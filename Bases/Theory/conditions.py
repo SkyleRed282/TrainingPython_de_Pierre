@@ -1,11 +1,12 @@
 if __name__ == '__main__':
 
-    a = 200
-    b = 33
+    x = 120
 
-    if b > a:
-        print("b is greater than a")
-    elif a == b:
-        print("a and b are equal")
+    if x > 150:
+        print("x > 150")
+    elif x > 100:
+        print("x > 100")
+    elif x > 80:
+        print("x > 80")
     else:
-        print("a is greater than b")
+        print("x <= 80")
