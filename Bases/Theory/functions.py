@@ -3,8 +3,8 @@ def say_hello(name: str = 'Lucas'):
 
 
 def ask_age():
-    age_user = input('Age?')
-    return age_user
+    user_age = input('Age?')
+    return user_age
 
 
 def say_hello_mp(name, age_user=25):
@@ -12,7 +12,11 @@ def say_hello_mp(name, age_user=25):
 
 
 if __name__ == '__main__':
+
+    say_hello()
+    say_hello(123)
     print(say_hello('Pierre'))
+
     say_hello_mp(age_user=23, name='toto')
     age = ask_age()
 

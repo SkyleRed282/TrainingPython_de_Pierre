@@ -1,7 +1,7 @@
 import random
-from Bases.Practice.TicTacToe import Player
-from Bases.Practice.TicTacToe.Grid import Grid
-from Bases.Practice.TicTacToe.Human import Human
+from Bases.Practice.Solution.TicTacToe import Player
+from Bases.Practice.Solution.TicTacToe.Grid import Grid
+from Bases.Practice.Solution.TicTacToe.Human import Human
 
 
 class Game:

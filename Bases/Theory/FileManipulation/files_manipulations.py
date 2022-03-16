@@ -1,38 +1,22 @@
 import os
+import random
+import json
 
 if __name__ == '__main__':
 
-    # print(type(file_data),file_data)
+    # Generate dict of numbers and save it as JSON
+    numbers = list(range(10))
+    number_dict = {}
+    for number in numbers:
+        number_dict[number] = random.randint(50,100)
 
-    # with open('contacts.csv') as file_pointer:
-    #     # for x in file_pointer:
-    #     #     print(x, type(x))
-    #     file_data = file_pointer.read()
+    for key, value in number_dict.items():
+        print(key, value)
 
-    # with open('contacts.bin', 'wb') as file_pointer:
-    #     file_pointer.write(file_data.encode())
-    #     # print(file_data.encode())
+    with open('numbers.json', 'w') as file_pointer:
+        file_pointer.write(json.dumps(number_dict))
 
-    # for x in range(10):
-    #     file_name = f'{x}.txt'
-    #
-    #     value_to_write = x
-    #
-    #     if os.path.exists(file_name):
-    #         with open(file_name) as file_pointer:
-    #             list_lines = file_pointer.readlines()
-    #
-    #         if len(list_lines) > 0:
-    #             last_value = int(list_lines[-1])
-    #             value_to_write = last_value + 1
-    #
-    #     with open(file_name, 'a') as file_pointer:
-    #         file_pointer.write(f'{value_to_write}\n')
-
-    with open('contacts.csv') as file_pointer:
-        list_lines = file_pointer.readlines()
-    headers = list_lines[0].replace('\n', '').split(',')
-
-    for line in list_lines[1:]:
-        line_list = line.replace('\n', '').replace(', ', ' ').split(',')
-        print(line_list)
+    # read the file and display it as Python object
+    with open('numbers.json') as file_pointer:
+        content = json.loads(file_pointer.read())
+    print(content,type(content))
