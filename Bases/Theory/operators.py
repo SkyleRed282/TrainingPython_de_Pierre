@@ -25,8 +25,8 @@ if __name__ == '__main__':
     var1 += 2
     var1 = var1 + 2
 
-    # operateurs comparaison
-    print(' == operateurs de comparaison ==')
+    # comparison operateurs
+    print(' == comparison operateurs  ==')
     print(1 == 2)
     print(1 != 2)
 

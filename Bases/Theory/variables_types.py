@@ -1,8 +1,13 @@
+# Import
+import string
 
 if __name__ == '__main__':
 
     # I'm a comment
     print('I\'m printing inside the terminal')
+
+    # Attribute + Method call
+    print(string.ascii_lowercase.upper())
 
     # Assignation
     var1 = 123
@@ -16,9 +21,10 @@ if __name__ == '__main__':
     # Data type
     print(' === data type === ')
     my_string = 'abc'
-    print(my_string[1])
+    print(my_string[0])
+
     my_multiline_string = ''' 
-    aaaasd 
+    aaaasd
     asdasd
     asdasd
     asdasd
@@ -41,6 +47,7 @@ if __name__ == '__main__':
     print(my_list)
 
     empty_list = []
+
     my_list[1] = 'gg'
     print(my_list)
 
@@ -48,7 +55,7 @@ if __name__ == '__main__':
     print(my_list)
 
     print(' === tuple === ')
-    my_tuple = ('abc', 1)
+    my_tuple = ('abc', 1, [1, 2, 3])
     print(my_tuple)
 
     print(' === set === ')
@@ -58,10 +65,8 @@ if __name__ == '__main__':
     print(my_set)
 
     print(' === range === ')
-    my_range = range(2, 15, 2)  # [2, 4, 6]
-    for x in my_range:
-        print(x, end=' ')
-    print(my_range)
+    my_range = range(2, 15, 2)  # [2, 4, 6, ..]
+    print(list(my_range))
 
     print(' === dict === ')
     empty_dict = {}
@@ -77,12 +82,10 @@ if __name__ == '__main__':
         }
     )
     print(my_dict)
+
     my_dict[456] = 'abc'
     print(my_dict)
 
-    print(my_dict.get('324', 'Nothing'))
-    print(my_dict['324'])
-
-
-
-
+    print(my_dict.get(324, 'Nothing'))
+    # print(my_dict['324'])
+    print(my_dict.keys())
