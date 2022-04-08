@@ -4,9 +4,8 @@ if __name__ == '__main__':
 
     if x > 150:
         print("x > 150")
-    elif x > 100:
-        print("x > 100")
-    elif x > 80:
-        print("x > 80")
+    elif x < 150:
+        print("x < 150")
     else:
-        print("x <= 80")
+        print("x == 150")
+

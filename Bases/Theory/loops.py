@@ -7,7 +7,11 @@ if __name__ == '__main__':
     for lettre in ascii_lowercase[:3]:
         print(lettre, end=' ')
 
-    print('\n\nFor ')
+    print('\nFor each - enumerate')
+    for index, lettre in enumerate(ascii_lowercase[:3]):
+        print(index, lettre, end=' ')
+
+    print('\n\nFor i')
     for letter_number in range(3):  # [0, 1, 2]
         # ['a','b', ...]
         print(ascii_lowercase[letter_number], end=' ')
