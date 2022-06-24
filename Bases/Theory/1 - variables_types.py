@@ -2,12 +2,11 @@
 import string
 
 if __name__ == '__main__':
-
     # I'm a comment
     print('I\'m printing inside the terminal')
 
     # Attribute + Method call
-    print(string.ascii_lowercase.upper())
+    print(string.ascii_lowercase)
 
     # Assignation
     var1 = 123
@@ -20,7 +19,7 @@ if __name__ == '__main__':
 
     # Data type
     print(' === data type === ')
-    my_string = 'abc'
+    my_string = 'abc'  # my_string = ['a', 'b', 'c']
     print(my_string[0])
 
     my_multiline_string = ''' 
@@ -54,18 +53,21 @@ if __name__ == '__main__':
     my_list.append('asd')
     print(my_list)
 
+    my_list.insert(0, 'yxc')
+    print(my_list)
+
     print(' === tuple === ')
     my_tuple = ('abc', 1, [1, 2, 3])
     print(my_tuple)
 
     print(' === set === ')
-    # set = pas de doublons
+    # set = no duplicates
     my_set = {'a', 'a', 'b'}
     empty_set = set()
     print(my_set)
 
     print(' === range === ')
-    my_range = range(2, 15, 2)  # [2, 4, 6, ..]
+    my_range = range(1, 15, 2)  # [2, 4, 6, ..]
     print(list(my_range))
 
     print(' === dict === ')
@@ -86,6 +88,11 @@ if __name__ == '__main__':
     my_dict[456] = 'abc'
     print(my_dict)
 
+    del my_dict[456]
+    print(my_dict)
+
     print(my_dict.get(324, 'Nothing'))
     # print(my_dict['324'])
     print(my_dict.keys())
+
+

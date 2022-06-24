@@ -9,29 +9,29 @@ if __name__ == '__main__':
     my_list = ['2']
     my_empty_list = []
 
-    if my_list:
+    if my_empty_list:
         print('List is not empty')
     else:
         print('List is empty')
 
-    # operateurs arithmetics
+    # arithmetics
     print(' == Operateurs arithmetics ==')
     var = 1 * 2 / 2 - 3 + 5
     print(5 % 2)
     print(5 // 2)
 
-    # operateurs d'assigement
+    # assigement
     var1 = 1
-    var1 += 2
     var1 = var1 + 2
+    var1 += 2
 
-    # comparison operateurs
+    # comparison
     print(' == comparison operateurs  ==')
     print(1 == 2)
     print(1 != 2)
 
     # operateurs logiques
-    print(' == operateurs logiques ==')
+    print(' == logical ==')
     print(True and False)
     print(True or False)
     print(not False)
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # identity operators
     print(' == identity operators ==')
     print(type(var1) is int)
-    print(isinstance(True, bool))
+    print(isinstance(True, bool))  # classes
 
     # membership operator
     print(' == membership operator ==')
