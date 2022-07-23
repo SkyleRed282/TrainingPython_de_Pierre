@@ -1,9 +1,9 @@
-from PyTanks.Tanks.arty_tank import ArtyTank
-from PyTanks.Tanks.heavy_tank import HeavyTank
-from PyTanks.Tanks.light_tank import LightTank
-from PyTanks.Tanks.medium_tank import MediumTank
-from PyTanks.Tanks.td_tank import TDTank
-from PyTanks.wot_api import WotAPI
+from Misc.PyTanks.Tanks.arty_tank import ArtyTank
+from Misc.PyTanks.Tanks.heavy_tank import HeavyTank
+from Misc.PyTanks.Tanks.light_tank import LightTank
+from Misc.PyTanks.Tanks.medium_tank import MediumTank
+from Misc.PyTanks.Tanks.td_tank import TDTank
+from Misc.PyTanks.wot_api import WotAPI
 
 
 class TankFactory:

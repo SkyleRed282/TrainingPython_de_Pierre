@@ -1,7 +1,7 @@
 from copy import copy
 from random import sample
 
-from PyTanks.player import Player
+from Misc.PyTanks.player import Player
 
 
 class Team:

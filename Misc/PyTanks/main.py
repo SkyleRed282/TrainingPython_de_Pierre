@@ -1,5 +1,4 @@
-from random import sample
-from PyTanks.game import Game
+from Misc.PyTanks.game import Game
 
 if __name__ == '__main__':
 
