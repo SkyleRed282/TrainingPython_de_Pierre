@@ -11,23 +11,29 @@ def say_hello_mp(name, age_user=25):
     print(f'Hello {name} {age_user}')
 
 
-if __name__ == '__main__':
+# *args and **kwargs are standard names for those special parameters
+def args_and_kwargs(*positional_argument, **keyword_argument):
+    print(type(positional_argument), positional_argument)
+    print(type(keyword_argument), keyword_argument)
 
-    # use default value
+
+if __name__ == '__main__':
+    print('\n# Use default value')
     say_hello()
 
-    # passed value with wrong type
+    print('\n# passed value with wrong type')
     say_hello(123)
 
-    # function without return
+    print('\n# function without return')
     print(say_hello('Pierre'))
 
-    # variable order inversion
+    print('\n# variable order inversion')
     say_hello_mp(age_user=23, name='toto')
     say_hello_mp('toto', 23)
 
-    # user input
+    print('\n# user input')
     age = ask_age()
     print(f'You are {age} year(s) old')
 
-    # TODO **args + **kwargs
+    print('\n# *args + **kwargs')
+    args_and_kwargs(1, 3, 5, 6, 7, x=1, y=2, z=3)
