@@ -30,7 +30,7 @@ if __name__ == '__main__':
     print(1 == 2)
     print(1 != 2)
 
-    # operateurs logiques
+    # logics operators
     print(' == logical ==')
     print(True and False)
     print(True or False)

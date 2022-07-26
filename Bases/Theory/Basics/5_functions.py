@@ -13,13 +13,21 @@ def say_hello_mp(name, age_user=25):
 
 if __name__ == '__main__':
 
+    # use default value
     say_hello()
+
+    # passed value with wrong type
     say_hello(123)
 
+    # function without return
     print(say_hello('Pierre'))
 
+    # variable order inversion
     say_hello_mp(age_user=23, name='toto')
     say_hello_mp('toto', 23)
-    age = ask_age()
 
+    # user input
+    age = ask_age()
     print(f'You are {age} year(s) old')
+
+    # TODO **args + **kwargs

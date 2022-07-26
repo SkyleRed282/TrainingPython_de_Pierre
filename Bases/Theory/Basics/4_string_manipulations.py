@@ -1,4 +1,5 @@
 if __name__ == '__main__':
+
     # slicing
     print(' === slicing === ')
     my_str = 'abcdefghax'
@@ -17,18 +18,19 @@ if __name__ == '__main__':
     print(my_str.split())
 
     # formating
-    print(' === formating === ')
+    print(' === formatting === ')
     age = 34
-    prenom = 'Pierre'
+    firstname = 'Pierre'
 
-    print(f'Je m\'appelle {prenom} et j\'ai {age} ans.')
-    print('Je m\'appelle %s et j\'ai %s ans.' % (prenom, age))
+    print(f'Je m\'appelle {firstname} et j\'ai {age} ans.')
+    print('Je m\'appelle %s et j\'ai %s ans.' % (firstname, age))
 
-    data_dict = {'prenom': prenom, 'age': age}
-    print('Je m\'appelle %(prenom)s et j\'ai %(age)s ans.' % data_dict)
+    data_dict = {'firstname': firstname, 'age': age, 'nationality': 'CH'}
+    print('Je m\'appelle %(firstname)s et j\'ai %(age)s ans.' % data_dict)
 
     # Don't do it at home!
-    print('Je m\'appelle ' + prenom + ' et j\'ai ' + str(age) + ' ans.')
+    print('Je m\'appelle ' + firstname + ' et j\'ai ' + str(age) + ' ans.')
 
     # Ugly way only for print
-    print('Je m\'appelle', prenom, 'et j\'ai', age, 'ans.')
+    print('Je m\'appelle', firstname, 'et j\'ai', age, 'ans.')
+    

@@ -2,6 +2,7 @@
 import string
 
 if __name__ == '__main__':
+
     # I'm a comment
     print('I\'m printing inside the terminal')
 
@@ -39,21 +40,22 @@ if __name__ == '__main__':
     print(type(var3))
     print(int(var3) + 5)
     print(var3 + str(5))
+    print(5*'x')
 
     # Structures
     print(' === structures === ')
     my_list = ['a', 1, 'test', 'toto', 1]
     print(my_list)
 
-    empty_list = []
+    empty_list = []  # list()
 
-    my_list[1] = 'gg'
+    my_list[1] = 'dog'
     print(my_list)
 
-    my_list.append('asd')
+    my_list.append('cat')
     print(my_list)
 
-    my_list.insert(0, 'yxc')
+    my_list.insert(0, 'bird')
     print(my_list)
 
     print(' === tuple === ')
@@ -73,14 +75,14 @@ if __name__ == '__main__':
     print(' === dict === ')
     empty_dict = {}
     my_dict = {
-        'cle1': 'valeur1',
+        'key1': 'value1',
         2: 34
     }
     print(my_dict)
     my_dict.update(
         {
-            'cle1': 11,
-            'cle33': 123
+            'key1': 11,
+            'key33': 123
         }
     )
     print(my_dict)
@@ -93,6 +95,6 @@ if __name__ == '__main__':
 
     print(my_dict.get(324, 'Nothing'))
     # print(my_dict['324'])
-    print(my_dict.keys())
 
+    print(my_dict.keys())
 
