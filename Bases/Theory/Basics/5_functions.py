@@ -17,6 +17,10 @@ def args_and_kwargs(*positional_argument, **keyword_argument):
     print(type(keyword_argument), keyword_argument)
 
 
+def sum_example(*positional_argument):
+    return sum(positional_argument)
+
+
 if __name__ == '__main__':
     print('\n# Use default value')
     say_hello()
@@ -37,3 +41,6 @@ if __name__ == '__main__':
 
     print('\n# *args + **kwargs')
     args_and_kwargs(1, 3, 5, 6, 7, x=1, y=2, z=3)
+
+    print('\n# Sim ')
+    print(sum_example(1, 3, 5, 6, 7))

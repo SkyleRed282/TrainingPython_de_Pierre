@@ -1,7 +1,7 @@
 import copy
 
-from Bases.Practice.Solution.TicTacToe import Grid
-from Bases.Practice.Solution.TicTacToe.Player import Player
+from Bases.Practice.TicTacToe import Grid
+from Bases.Practice.TicTacToe.Player import Player
 import random
 
 

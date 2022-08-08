@@ -1,5 +1,5 @@
-from Bases.Practice.Solution.TicTacToe.Grid import Grid
-from Bases.Practice.Solution.TicTacToe.Player import Player
+from Bases.Practice.TicTacToe.Grid import Grid
+from Bases.Practice.TicTacToe.Player import Player
 
 
 class Human(Player):
