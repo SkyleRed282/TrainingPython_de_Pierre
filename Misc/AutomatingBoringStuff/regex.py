@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(mo3.group())
 
     batRegex3 = re.compile(r'Bat(wo)+man')
-    mo3 = batRegex.search('The Adventures of Batman')
+    mo3 = batRegex3.search('The Adventures of Batman')
     print(mo3.group())
 
     # regex are greedy, the match by default the longest result
