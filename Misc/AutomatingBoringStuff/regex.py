@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     batRegex3 = re.compile(r'Bat(wo)+man')
     mo3 = batRegex3.search('The Adventures of Batman')
-    print(mo3.group())
+    print(mo3)
 
     # regex are greedy, the match by default the longest result
     # add an '?' after a range {} to get the shortest result
