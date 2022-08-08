@@ -18,8 +18,12 @@ def add_string_5(some_str: str):
     return some_str
 
 
-if __name__ == '__main__':
+def add_dict_5(some_dict: dict):
+    some_dict[5] = some_dict[5] + 5
+    return some_dict
 
+
+if __name__ == '__main__':
     print('int is immutable')
     base_int = 5
     print(add_5(base_int))
@@ -39,3 +43,8 @@ if __name__ == '__main__':
     base_str = 'base_text'
     print(add_string_5(base_str))
     print(base_str)
+
+    print('dict is mutable')
+    base_dict = {5: 5}
+    print(add_dict_5(base_dict))
+    print(base_dict)
