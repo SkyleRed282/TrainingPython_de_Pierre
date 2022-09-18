@@ -17,20 +17,20 @@ if __name__ == '__main__':
     my_str = 'Hello python world!'
     print(my_str.split())
 
-    # formating
+    # formatting
     print(' === formatting === ')
     age = 34
     firstname = 'Pierre'
 
-    print(f'Je m\'appelle {firstname} et j\'ai {age} ans.')
-    print('Je m\'appelle %s et j\'ai %s ans.' % (firstname, age))
+    print(f'My name is {firstname} and I\'m {age}')
+    print('My name is %s and I\'m %s' % (firstname, age))
 
     data_dict = {'firstname': firstname, 'age': age, 'nationality': 'CH'}
-    print('Je m\'appelle %(firstname)s et j\'ai %(age)s ans.' % data_dict)
+    print('My name is %(firstname)s and I\'m %(age)s' % data_dict)
 
     # Don't do it at home!
-    print('Je m\'appelle ' + firstname + ' et j\'ai ' + str(age) + ' ans.')
+    print('My name is ' + firstname + ' and I\'m ' + str(age))
 
-    # Ugly way only for print
-    print('Je m\'appelle', firstname, 'et j\'ai', age, 'ans.')
+    # Print multiple variables at once
+    print('My name is', firstname, 'and I\'m', age)
     

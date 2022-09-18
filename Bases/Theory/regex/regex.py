@@ -1,8 +1,8 @@
 import re
 
 if __name__ == '__main__':
-    # Base
-    print('\n### Base ###')
+    # base
+    print('\n### base ###')
     phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
     match_object = phoneNumRegex.search('My number is 415-555-4242.')
     print('Phone number found: ' + match_object.group())
@@ -82,8 +82,8 @@ if __name__ == '__main__':
     match_list = xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
     print(match_list)
 
-    # Own Character Classes
-    print('\n### Own Character Classes ###')
+    # Own Character classes
+    print('\n### Own Character classes ###')
     vowelRegex = re.compile(r'[aeiouAEIOU]')
     match_list = vowelRegex.findall('RoboCop eats baby food. BABY FOOD.')
     print(match_list)
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     # \d, \w, and \s match a digit, word, or space character, respectively.
     # \D, \W, and \S match anything except a digit, word, or space character, respectively.
     # [abc] matches any character between the brackets (such as a, b, or c).
-    # [^abc] matches any character that isn’t between the brackets.
+    # [^abc] matches any character that isn’threads between the brackets.
 
     # Case-Insensitive Matchings
     print('\n### Case-Insensitive Matching ###')
