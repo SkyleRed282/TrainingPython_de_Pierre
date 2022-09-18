@@ -1,6 +1,6 @@
 
-from Misc.PyTanks.Tanks.tank_factory import TankFactory
-from Misc.PyTanks.team import Team
+from misc.py_tanks.tanks.tank_factory import TankFactory
+from misc.py_tanks.team import Team
 
 
 class Game:

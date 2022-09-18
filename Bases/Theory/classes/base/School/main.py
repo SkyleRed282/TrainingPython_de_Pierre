@@ -1,8 +1,8 @@
-from Bases.Theory.Classes.School.school import School
-from Bases.Theory.Classes.School.student import Student
+from bases.theory.classes.base.school.school import School
+from bases.theory.classes.base.school.student import Student
 
 if __name__ == '__main__':
-    school_1 = School(name='Montreux School')
+    school_1 = School(name='Montreux school')
 
     s1 = Student('Pierre', 'Anken')
     s2 = Student('Iman', 'Julaidan')

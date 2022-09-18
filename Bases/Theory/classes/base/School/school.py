@@ -1,16 +1,16 @@
-from Bases.Theory.Classes.School.ClassRoom import ClassRoom
-from Bases.Theory.Classes.School.student import Student
+from bases.theory.classes.base.school.ClassRoom import ClassRoom
+from bases.theory.classes.base.school.student import Student
 
 
 class School:
 
-    # Class constructor called by new class instance creation School()
+    # Class constructor called by new class instance creation school()
     def __init__(self, name: str):
         self.name = name
         self.student_list = []
         self.class_room_list = []
 
-    # String representation of the class instances of School
+    # String representation of the class instances of school
     def __str__(self):
         return self.name
 

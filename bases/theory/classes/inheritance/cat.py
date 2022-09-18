@@ -1,4 +1,4 @@
-from Bases.Theory.DemoClasses.Inheritance.Animal import Animal
+from bases.theory.DemoClasses.Inheritance.Animal import Animal
 
 
 class Cat(Animal):

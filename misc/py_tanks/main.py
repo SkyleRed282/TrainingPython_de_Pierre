@@ -1,4 +1,4 @@
-from Misc.PyTanks.game import Game
+from misc.py_tanks.game import Game
 
 if __name__ == '__main__':
 

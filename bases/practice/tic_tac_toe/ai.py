@@ -1,7 +1,7 @@
 import copy
 
-from Bases.Practice.TicTacToe import Grid
-from Bases.Practice.TicTacToe.Player import Player
+from bases.practice.tic_tac_toe import grid
+from bases.practice.tic_tac_toe.player import Player
 import random
 
 

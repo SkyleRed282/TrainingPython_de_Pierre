@@ -1,6 +1,6 @@
-from Bases.Practice.TicTacToe.AI import AI
-from Bases.Practice.TicTacToe.Game import Game
-from Bases.Practice.TicTacToe.Human import Human
+from bases.practice.tic_tac_toe.ai import AI
+from bases.practice.tic_tac_toe.game import Game
+from bases.practice.tic_tac_toe.human import Human
 
 if __name__ == '__main__':
 

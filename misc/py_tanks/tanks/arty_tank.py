@@ -1,4 +1,4 @@
-from Misc.PyTanks.Tanks.base_tank import BaseTank
+from misc.py_tanks.tanks.base_tank import BaseTank
 
 
 class ArtyTank(BaseTank):
