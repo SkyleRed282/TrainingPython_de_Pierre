@@ -1,6 +1,7 @@
 if __name__ == '__main__':
 
-    x = 160
+    user_input = input(f'Enter a number')
+    x = int(user_input)
 
     if x > 150:
         print("x > 150")

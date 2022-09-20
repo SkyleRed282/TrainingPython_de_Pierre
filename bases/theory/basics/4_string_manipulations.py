@@ -19,8 +19,8 @@ if __name__ == '__main__':
 
     # formatting
     print(' === formatting === ')
-    age = 34
-    firstname = 'Pierre'
+    age = 26
+    firstname = 'Luc'
 
     print(f'My name is {firstname} and I\'m {age}')
     print('My name is %s and I\'m %s' % (firstname, age))

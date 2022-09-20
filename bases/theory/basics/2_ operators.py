@@ -3,19 +3,12 @@ if __name__ == '__main__':
     print(True)
     print(3 < 5)
 
-    if 3 > 2:
-        print('x')
-
     my_list = ['2']
     my_empty_list = []
-
-    if my_empty_list:
-        print('List is not empty')
-    else:
-        print('List is empty')
+    print(bool(my_list), bool(my_empty_list))
 
     # arithmetics
-    print(' == Operateurs arithmetics ==')
+    print(' == arithmetic ==')
     var = 1 * 2 / 2 - 3 + 5
     print(5 % 2)
     print(5 // 2)
@@ -26,11 +19,11 @@ if __name__ == '__main__':
     var1 += 2
 
     # comparison
-    print(' == comparison operateurs  ==')
+    print(' == comparison ==')
     print(1 == 2)
     print(1 != 2)
 
-    # logics operators
+    # logical operators
     print(' == logical ==')
     print(True and False)
     print(True or False)
