@@ -3,7 +3,7 @@ import requests
 if __name__ == '__main__':
 
     try:
-        resp = requests.get('http://www.google.fr')
+        # resp = requests.get('http://www.google.fraasd')
         # print(resp.status_code)
         # raise Exception('Exception !!!')
         # 1/0
