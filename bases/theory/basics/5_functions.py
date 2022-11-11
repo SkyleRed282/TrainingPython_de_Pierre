@@ -1,23 +1,38 @@
-def say_hello(name: str = 'Lucas'):
+def say_hello(name: str = 'Lucas') -> None:
+    """
+    Say hello to with a given name
+    """
     print(f'Hello {name} ')
 
 
-def ask_age():
+def ask_age() -> str:
+    """
+    Ask the user for his age and return it
+    """
     user_age = input('Age?')
     return user_age
 
 
 def say_hello_mp(name, age_user=25):
+    """
+    Say hello to with a given name and age
+    """
     print(f'Hello {name} {age_user}')
 
 
 # *args and **kwargs are standard names for those special parameters
 def args_and_kwargs(*positional_argument, **keyword_argument):
+    """
+    Print the list of kwargs and args
+    """
     print(type(positional_argument), positional_argument)
     print(type(keyword_argument), keyword_argument)
 
 
 def sum_example(*positional_argument):
+    """
+    Return the sum of any number of positional arguments
+    """
     return sum(positional_argument)
 
 
