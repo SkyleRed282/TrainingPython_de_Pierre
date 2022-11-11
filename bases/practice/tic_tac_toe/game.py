@@ -1,8 +1,8 @@
 import random
 
-from Bases.practice.tic_tac_toe.grid import Grid
-from Bases.practice.tic_tac_toe.human import Human
-from Bases.practice.tic_tac_toe.player import Player
+from bases.practice.tic_tac_toe.grid import Grid
+from bases.practice.tic_tac_toe.human import Human
+from bases.practice.tic_tac_toe.player import Player
 
 
 class Game:
