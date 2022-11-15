@@ -24,6 +24,7 @@ def add_dict_5(some_dict: dict):
 
 
 if __name__ == '__main__':
+
     print('int is immutable')
     base_int = 5
     print(add_5(base_int))
