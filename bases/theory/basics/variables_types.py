@@ -1,5 +1,3 @@
-# Import
-import string
 
 if __name__ == '__main__':
 
@@ -7,7 +5,7 @@ if __name__ == '__main__':
     print('I\'m printing inside the terminal')
 
     # Attribute + Method call
-    print(string.ascii_lowercase)
+    print('hello world'.capitalize())
 
     # Assignation
     var1 = 123
@@ -20,7 +18,7 @@ if __name__ == '__main__':
 
     # Data type
     print(' === data type === ')
-    my_string = 'abc'  # my_string = ['a', 'b', 'c']
+    my_string = 'abc' # my_string = ['a', 'b', 'c']
     print(my_string[0])
 
     my_multiline_string = ''' 
@@ -40,7 +38,7 @@ if __name__ == '__main__':
     print(type(var3))
     print(int(var3) + 5)
     print(var3 + str(5))
-    print(5*'x')
+    print(5 * 'x')
 
     # Structures
     print(' === structures === ')
@@ -60,7 +58,7 @@ if __name__ == '__main__':
 
     print(' === tuple === ')
     my_tuple = ('abc', 1, [1, 2, 3])
-    print(my_tuple)
+    print(my_tuple[2][0])
 
     print(' === set === ')
     # set = no duplicates
@@ -93,8 +91,7 @@ if __name__ == '__main__':
     del my_dict[456]
     print(my_dict)
 
-    print(my_dict.get(324, 'Nothing'))
+    print(my_dict.get(324, 'Nothing'))  # None
     # print(my_dict['324'])
 
     print(my_dict.keys())
-
