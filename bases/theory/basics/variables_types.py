@@ -1,7 +1,7 @@
 
 if __name__ == '__main__':
 
-    # I'm a comment
+    # I'm a comment - Identation is important
     print('I\'m printing inside the terminal')
 
     # Attribute + Method call

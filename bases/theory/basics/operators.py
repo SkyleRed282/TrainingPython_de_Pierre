@@ -1,12 +1,5 @@
 if __name__ == '__main__':
 
-    print(True)
-    print(3 < 5)
-
-    my_list = ['2']
-    my_empty_list = []
-    print(bool(my_list), bool(my_empty_list))
-
     # arithmetics
     print(' == arithmetic ==')
     var = 1 * 2 / 2 - 3 + 5
@@ -32,7 +25,6 @@ if __name__ == '__main__':
     # identity operators
     print(' == identity operators ==')
     print(type(var1) is int)
-    print(isinstance(True, bool))  # classes
 
     # membership operator
     print(' == membership operator ==')

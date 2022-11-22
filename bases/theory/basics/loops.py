@@ -1,10 +1,9 @@
 from string import ascii_lowercase as alphabet
 
-
 if __name__ == '__main__':
 
     print('\nFor each')
-    for letter in alphabet[:3]: # ['a','b','c']
+    for letter in alphabet[:3]:  # ['a','b','c']
         print(letter, end=' ')
 
     print('\n\nFor each - enumerate')
@@ -29,10 +28,10 @@ if __name__ == '__main__':
             break
 
     print('\n\nContinue')
-    for number in range(11):
-        if number % 2 == 0:
+    for letter_number in range(11):
+        if letter_number % 2 == 1:
             continue
-        print(number, end=' ')
+        print(alphabet[letter_number], end=' ')
 
     print('\n\nLoop in loop')
     for letter1 in alphabet:

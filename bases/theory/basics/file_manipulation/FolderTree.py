@@ -14,5 +14,6 @@ if __name__ == '__main__':
             with open(f'calendar/{month_number}/{day_number}.txt', 'w'):
                 pass
 
-    for root, dirs, files in os.walk("", topdown=False):
+    for root, dirs, files in os.walk("calendar", topdown=True):
         print(root, dirs, files)
+

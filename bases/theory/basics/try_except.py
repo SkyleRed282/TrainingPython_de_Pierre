@@ -3,11 +3,10 @@ import requests
 if __name__ == '__main__':
 
     try:
-        # resp = requests.get('http://www.google.fraasd')
+        resp = requests.get('http://www.google.fraasd')
         # print(resp.status_code)
         # raise Exception('Exception !!!')
-        # 1/0
-        pass
+        # 1 / 0
     except ZeroDivisionError as e:
         print(f'ZeroDivisionError: {e}')
     except Exception as e:
@@ -16,4 +15,3 @@ if __name__ == '__main__':
         print('No error')
     finally:
         print('Always called')
-
