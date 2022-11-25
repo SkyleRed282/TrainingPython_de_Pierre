@@ -2,25 +2,37 @@ import random
 
 if __name__ == '__main__':
 
-    leben = 10
-    zahl = random.randint(0, 101)
+    continue_game = True
 
-    user_input = -1
+    while continue_game:
 
-    while user_input != zahl and leben != 0:
+        leben = 2
+        zahl = random.randint(0, 101)
 
-        print(f'Du hast noch {leben} Leben ')
+        user_input = -1
 
-        user_input = int(input('Welche nummer?'))
+        while user_input != zahl and leben != 0:
 
-        if zahl == user_input:
-            print("You win!")
-        elif zahl > user_input:
-            print("Zahl ist grösser")
-        else:
-            print("Zahl ist kleiner")
+            print(f'Du hast noch {leben} Leben ')
 
-        leben -= 1
+            while True:
+                user_input = input('Welche nummer?')
 
-        if leben == 0:
-            print("You loose!")
+                if user_input.isdigit():
+                    user_input = int(user_input)
+                    break
+
+            if zahl == user_input:
+                print("You win!")
+            elif zahl > user_input:
+                print("Zahl ist grösser")
+            else:
+                print("Zahl ist kleiner")
+
+            leben -= 1
+
+            if leben == 0:
+                print("You loose!")
+
+        user_input_game = input('Möchten Sie weiterspielen? J/N')
+        continue_game = 'j' in user_input_game.lower()
