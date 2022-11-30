@@ -21,19 +21,23 @@ def say_hello_mp(name, age_user=25):
 
 
 # *args and **kwargs are standard names for those special parameters
-def args_and_kwargs(*positional_argument, **keyword_argument):
+def args_and_kwargs(*positional_arguments, **keyword_arguments):
     """
-    Print the list of kwargs and args
+    Print the type and the list of kwargs and args
     """
-    print(type(positional_argument), positional_argument)
-    print(type(keyword_argument), keyword_argument)
+    print(type(positional_arguments), positional_arguments)
+    print(type(keyword_arguments), keyword_arguments)
 
 
 def sum_example(*positional_argument):
     """
     Return the sum of any number of positional arguments
     """
-    return sum(positional_argument)
+    result = 0
+    for param in positional_argument:
+        result += param
+
+    return result
 
 
 if __name__ == '__main__':
@@ -44,7 +48,8 @@ if __name__ == '__main__':
     say_hello(123)
 
     print('\n# function without return')
-    print(say_hello('Pierre'))
+    returned_value = say_hello('Pierre')
+    print(returned_value)
 
     print('\n# variable order inversion')
     say_hello_mp(age_user=23, name='toto')
@@ -57,5 +62,5 @@ if __name__ == '__main__':
     print('\n# *args + **kwargs')
     args_and_kwargs(1, 3, 5, 6, 7, x=1, y=2, z=3)
 
-    print('\n# Sim ')
+    print('\n# Sum')
     print(sum_example(1, 3, 5, 6, 7))

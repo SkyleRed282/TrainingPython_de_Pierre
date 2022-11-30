@@ -1,7 +1,5 @@
-
 if __name__ == '__main__':
-
-    # I'm a comment - Identation is important
+    # I'm a comment - indentation is important
     print('I\'m printing inside the terminal')
 
     # Attribute + Method call
@@ -18,21 +16,21 @@ if __name__ == '__main__':
 
     # Data type
     print(' === data type === ')
-    my_string = 'abc' # my_string = ['a', 'b', 'c']
+    my_string = 'abc'  # my_string = ['a', 'b', 'c']
     print(my_string[0])
 
     my_multiline_string = ''' 
-    aaaasd
-    asdasd
-    asdasd
-    asdasd
+    SELECT *
+    FROM animaux
+    WHERE age > 10
+    LIMIT 10;
     '''
 
     my_int = 23
     my_float = 2.4
     my_bool = True
 
-    # casting
+    # Casting
     print(' === casting === ')
     var3 = '100'
     print(type(var3))
@@ -65,6 +63,7 @@ if __name__ == '__main__':
     my_set = {'a', 'a', 'b'}
     empty_set = set()
     print(my_set)
+    print(list(set([1, 1, 2, 3, 4])))
 
     print(' === range === ')
     my_range = range(1, 15, 2)  # [2, 4, 6, ..]
@@ -74,24 +73,24 @@ if __name__ == '__main__':
     empty_dict = {}
     my_dict = {
         'key1': 'value1',
-        2: 34
+        2: [1, 2]
     }
     print(my_dict)
     my_dict.update(
         {
             'key1': 11,
-            'key33': 123
+            'key3': 123
         }
     )
     print(my_dict)
 
-    my_dict[456] = 'abc'
+    my_dict['key4'] = 'abc'
     print(my_dict)
 
-    del my_dict[456]
+    del my_dict['key4']
     print(my_dict)
 
-    print(my_dict.get(324, 'Nothing'))  # None
-    # print(my_dict['324'])
+    print(my_dict.get('key5', 'Nothing'))  # None
+    # print(my_dict['key5'])
 
     print(my_dict.keys())

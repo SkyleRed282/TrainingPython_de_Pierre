@@ -40,4 +40,4 @@ if __name__ == '__main__':
         for letter2 in alphabet[::-1]:
             if letter2 == 'w':
                 break
-            print(f'{letter1}/{letter2}', end=' ')
+            print(letter1, letter2, sep='/', end=' ')
