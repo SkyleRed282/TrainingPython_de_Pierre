@@ -26,7 +26,7 @@ if __name__ == '__main__':
     print('My name is %s and I\'m %s' % (firstname, age))
 
     data_dict = {'firstname': firstname, 'age': age, 'nationality': 'CH'}
-    print('My name is %(firstname)s and I\'m %(age)s' % data_dict)
+    print("My name is %(firstname)s and I'm %(age)s" % data_dict)
 
     # Don't do it at home!
     print('My name is ' + firstname + ' and I\'m ' + str(age))

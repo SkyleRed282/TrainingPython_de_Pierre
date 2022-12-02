@@ -29,15 +29,22 @@ def args_and_kwargs(*positional_arguments, **keyword_arguments):
     print(type(keyword_arguments), keyword_arguments)
 
 
-def sum_example(*positional_argument):
+def sum_example(*positional_arguments):
     """
     Return the sum of any number of positional arguments
     """
     result = 0
-    for param in positional_argument:
+    for param in positional_arguments:
         result += param
 
     return result
+
+
+def exemple_mix_positional(operation: str, *numbers):
+    if operation == '+':
+        print(sum(numbers))
+    else:
+        print(f'Operation {operation} non supportée')
 
 
 if __name__ == '__main__':
@@ -64,3 +71,5 @@ if __name__ == '__main__':
 
     print('\n# Sum')
     print(sum_example(1, 3, 5, 6, 7))
+
+    exemple_mix_positional('+', 1, 2, 3, 4, 5, 6, 7, 8)
