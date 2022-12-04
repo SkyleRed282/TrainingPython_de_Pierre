@@ -18,10 +18,10 @@ def counter_letter(lettre_a_compter, texte):
 
 def cache_lettre(texte):
     """
-    
     :param texte:un texte
     :return: un nouveau texte, où les lettres sont remplacées par des "_"
     """
+
     text_cache = ''
     for caractere in texte:
         if caractere.isalpha():  # isalpha() => return True si c'est une lettre de l'alphabet
