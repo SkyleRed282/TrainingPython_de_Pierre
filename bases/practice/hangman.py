@@ -4,7 +4,7 @@ from random import sample
 import string
 
 
-def get_quotes(url):
+def get_quotes(url, anzahl=5):
     # Make a GET request and get response data
     response = requests.get(url)
 
