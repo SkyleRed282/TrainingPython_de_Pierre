@@ -1,4 +1,5 @@
 if __name__ == '__main__':
+
     # I'm a comment - indentation is important
     print('I\'m printing inside the terminal')
 
@@ -75,6 +76,7 @@ if __name__ == '__main__':
         'key1': 'value1',
         2: [1, 2]
     }
+
     print(my_dict)
     my_dict.update(
         {
@@ -93,4 +95,4 @@ if __name__ == '__main__':
     print(my_dict.get('key5', 'Nothing'))  # None
     # print(my_dict['key5'])
 
-    print(my_dict.keys())
+    print(list(my_dict.keys()))

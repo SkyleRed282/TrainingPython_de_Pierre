@@ -30,5 +30,4 @@ if __name__ == '__main__':
     print(' == membership operator ==')
     print('x' in 'axc')
     print('x' in ['a', 'x', 'c'])
-
-    print(len('axc'))
+    print('axc' in ['a', 'x', 'c'])

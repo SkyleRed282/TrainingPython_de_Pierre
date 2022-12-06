@@ -7,12 +7,13 @@ if __name__ == '__main__':
     print(my_str[-1])
 
     print(my_str[0:3])
-    print(my_str[3:6])
     print(my_str[::2])
     print(my_str[::-1])
 
+    # String methods
     print(my_str.replace('a', 'z'))
     print(my_str.index('fgh'))
+    print('bcdf' in my_str)
 
     my_str = 'Hello python world!'
     print(my_str.split())
