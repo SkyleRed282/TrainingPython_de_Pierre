@@ -1,12 +1,11 @@
 if __name__ == '__main__':
-
     # arithmetics
     print(' == arithmetic ==')
-    var = 1 * 2 / 2 - 3 + 5
-    print(5 % 2)
+    print(1 * 2 / 2 - 3 + 5)
+    print(5 % 2)  # Ex: repartition of items in boxes
     print(5 // 2)
 
-    # assigement
+    # assignment
     var1 = 1
     var1 = var1 + 2
     var1 += 2
@@ -15,12 +14,14 @@ if __name__ == '__main__':
     print(' == comparison ==')
     print(1 == 2)
     print(1 != 2)
+    print(1 <= 2)
 
     # logical operators
     print(' == logical ==')
     print(True and False)
     print(True or False)
     print(not False)
+    print(any([False, False, False, False, True]))
 
     # identity operators
     print(' == identity operators ==')
