@@ -8,7 +8,7 @@ if __name__ == '__main__':
     if not os.path.exists('data'):
         os.mkdir(path='data')
 
-    time.sleep(5)
+    time.sleep(10)
 
     # delete folder data from current folder
     os.rmdir(path='data')
