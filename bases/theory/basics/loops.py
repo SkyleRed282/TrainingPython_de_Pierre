@@ -41,3 +41,8 @@ if __name__ == '__main__':
             if letter2 == 'w':
                 break
             print(letter1, letter2, sep='/', end=' ')
+
+    print('\n\nZip')
+    for letter_a, letter_b in zip(alphabet[:3], alphabet[2::-1]):
+        print(letter_a, letter_b, sep='/')
+

@@ -3,7 +3,7 @@ import requests
 if __name__ == '__main__':
 
     try:
-        resp = requests.get('http://www.google.fraasd')
+        resp = requests.get('http://www.google.fr')
         # print(resp.status_code)
         # raise Exception('Exception !!!')
         # 1 / 0
@@ -12,6 +12,6 @@ if __name__ == '__main__':
     except Exception as e:
         print(f'Other exception: {e}')
     else:
-        print('No error')
+        print('Else: No error')
     finally:
-        print('Always called')
+        print('Finally: Always called')

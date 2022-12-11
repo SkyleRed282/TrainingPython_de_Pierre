@@ -27,4 +27,4 @@ if __name__ == '__main__':
             end_number = number - 1
 
     # When the game ended the computer write his result
-    print('YOuhou I won!')
+    print('You I won!')
