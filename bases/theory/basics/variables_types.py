@@ -1,5 +1,4 @@
 if __name__ == '__main__':
-
     # I'm a comment - indentation is important
     print('I\'m printing inside the terminal')
 
@@ -27,7 +26,7 @@ if __name__ == '__main__':
     LIMIT 10;
     '''
 
-    my_int = 23
+    my_int = 1_000_000
     my_float = 2.4
     my_bool = True
 
