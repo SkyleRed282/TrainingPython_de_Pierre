@@ -1,3 +1,8 @@
+# import the whole module
 import string
 
-print(string.ascii_lowercase)
+# import only one element with an alias
+from string import ascii_lowercase as alphabet
+
+print(string.ascii_uppercase)
+print(alphabet)

@@ -3,12 +3,12 @@ from string import ascii_lowercase as alphabet
 if __name__ == '__main__':
 
     print('\nFor each')
-    for letter in alphabet[:3]:  # ['a','b','c']
+    for letter in alphabet[:3]:  # abc
         print(letter, end=' ')
 
     print('\n\nFor each - enumerate')
     for index, letter in enumerate(alphabet[:3]):
-        print(index, letter, end=' ')
+        print(index, letter, end=' ', sep='-')
 
     print('\n\nFor i')
     for letter_number in range(3):  # [0, 1, 2]
