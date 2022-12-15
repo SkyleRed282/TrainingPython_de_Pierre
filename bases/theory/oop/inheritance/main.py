@@ -1,6 +1,6 @@
-from bases.theory.classes.inheritance.animal import Animal
-from bases.theory.classes.inheritance.bird import Bird
-from bases.theory.classes.inheritance.cat import Cat
+from bases.theory.oop.inheritance.animal import Animal
+from bases.theory.oop.inheritance.bird import Bird
+from bases.theory.oop.inheritance.cat import Cat
 
 if __name__ == '__main__':
     a1 = Animal()

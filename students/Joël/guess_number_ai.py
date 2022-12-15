@@ -5,12 +5,12 @@ if __name__ == '__main__':
     # The player think about a number in his head (1-100)
     start_number = 1
     end_number = 100
-    state_number = ''
+    state_number = '-'
 
     # Until the computer has found the correct number
     while state_number != '=':
 
-        state_number = ''
+        state_number = '-'
         # Computer choose (wisely) a number
         number = random.randint(start_number, end_number)
         print(f'Der Computer hat die Zahl {number} gewählt')
