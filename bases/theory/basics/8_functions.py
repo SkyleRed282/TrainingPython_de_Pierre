@@ -1,6 +1,8 @@
 def say_hello(name: str = 'Lucas') -> None:
     """
     Say hello to with a given name
+    :param name: optional name from someone
+    :return: None
     """
     print(f'Hello {name} ')
 
