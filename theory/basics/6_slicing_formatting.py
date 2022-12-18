@@ -20,7 +20,8 @@ if __name__ == '__main__':
     age = 26
     firstname = 'Luc'
 
-    print(f'My name is {firstname} and I\'m {age}')
+    my_str = f'My name is {firstname} and I\'m {age}'
+    print(my_str)
 
     # Not readable
     print('My name is %s and I\'m %s' % (firstname, age))

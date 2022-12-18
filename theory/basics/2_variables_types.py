@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     my_multiline_string = ''' 
     SELECT *
-    FROM animaux
+    FROM animals
     WHERE age > 10
     LIMIT 10;
     '''
@@ -91,7 +91,8 @@ if __name__ == '__main__':
     del my_dict['key4']
     print(my_dict)
 
-    print(my_dict.get('key5', 'Nothing'))  # None
+    print('key5', my_dict.get('key5', 'Nothing'))  # None
+    print('key1', my_dict.get('key1', 'Nothing2'))  # None
     # print(my_dict['key5'])
 
     print(list(my_dict.keys()))

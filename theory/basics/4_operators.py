@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     # identity operators
     print(' == identity operators ==')
-    print(type(var1) is int)
+    print(type(1) is int)
 
     # membership operator
     print(' == membership operator ==')
