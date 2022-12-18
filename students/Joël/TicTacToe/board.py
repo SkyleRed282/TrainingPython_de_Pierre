@@ -23,3 +23,5 @@ class Board:
             pass
         elif self.brett[2][0] == self.brett[2][1] == self.brett[2][2]:
             pass
+
+        return None

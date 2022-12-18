@@ -18,9 +18,12 @@ def get_quote_from_api(url: str) -> str:  # after -> refers to the return value
     return quote_dict['text']  # str
 
 
-# nimmt ein String als Parameter & gibt zurück einen Parameter in dem alle Buchstaben durch einen Unterstrich ersetzt sind, Leertasten bleiben gleich
 def get_hidden_sentence(sentence: str) -> str:
-    # Hello world! => _____ _____!
+    """
+    Given a sentence we are getting back the sentence with any letters replaced by blank spaces
+    :param sentence: any sentence
+    :return: sentence in hidden format
+    """
     hidden_sentence = ''
 
     # convert the given sentence
@@ -34,6 +37,11 @@ def get_hidden_sentence(sentence: str) -> str:
 
 
 def guess_letter(some_quote: str) -> (bool, str):
+    """
+
+    :param some_quote: any letter in the alphabet
+    :return:
+    """
     some_letter = ''
 
     while some_letter.lower() not in alphabet or len(some_letter) != 1:
@@ -44,6 +52,13 @@ def guess_letter(some_quote: str) -> (bool, str):
 
 # Methode zeigt Buchstabe in hidden_quote
 def reveal_letter(some_letter, some_quote, some_hidden_quote):
+    """
+    Given the values of a letter a quote and a hidden quote - this method reveals the letters in the hidden quote
+    :param some_letter: any letter
+    :param some_quote: any quote
+    :param some_hidden_quote: any hidden quote
+    :return: the changed sentence
+    """
     sentence = ''
 
     for base_letter, hidden_letter in zip(some_quote, some_hidden_quote):
@@ -87,3 +102,6 @@ if __name__ == '__main__':
                 print(f'{letter} is not contained in the sentence. Your new live count is {lives}.')
             else:
                 print(f'Game Over. The quote was: "{quote}"')
+
+    print(guess_letter(quote))
+
