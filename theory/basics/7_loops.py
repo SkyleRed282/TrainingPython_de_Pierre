@@ -59,5 +59,10 @@ if __name__ == '__main__':
 
     print('\n\nZip')
 
-    for letter_a, letter_b in zip(alphabet[:3], alphabet[2::-1]):
-        print(letter_a, letter_b, sep='/')
+    word = 'sugus'
+    for letter_start, letter_end in zip(word, word[::-1]):
+        if letter_start != letter_end:
+            print(word, 'is not a palindrome')
+            break
+    else:
+        print(word, 'is a palindrome')
