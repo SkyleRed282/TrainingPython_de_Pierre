@@ -67,4 +67,4 @@ def generate_tree(height):
 
 
 if __name__ == '__main__':
-    generate_tree(height=10)
+    generate_tree(height=12)

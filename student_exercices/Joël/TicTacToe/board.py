@@ -1,15 +1,19 @@
-rom
-students.Joël.TicTacToe.spieler
-import Spieler
+from copy import copy
 from typing import Union
+
+from student_exercices.Joël.TicTacToe.sign import Sign
 
 
 class Board:
-
-    def __init__(self):
-        self.brett = [[None, None, None],
+    _default_board = [[None, None, None],
                       [None, None, None],
                       [None, None, None]]
+
+    def __init__(self, board_position=None):
+        if board_position:
+            self.brett = board_position
+        else:
+            self.brett = copy(self._default_board)
 
     def is_full(self) -> bool:
         for line in self.brett:
@@ -18,52 +22,34 @@ class Board:
                     return False
         return True
 
-    def get_winner(self) -> Union[Spieler, None]:
-        if self.brett[0][0] == self.brett[0][1] == self.brett[0][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+    def get_winning_sign(self) -> Union[Sign, None]:
 
-        elif self.brett[1][0] == self.brett[1][1] == self.brett[1][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+        winning_sign = None
 
-        elif self.brett[2][0] == self.brett[2][1] == self.brett[2][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+        # Board indexes
+        # [00] [01] [02]
+        # [10] [11] [12]
+        # [20] [21] [22]
 
-        elif self.brett[0][0] == self.brett[1][0] == self.brett[2][0]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+        wining_positions = [
+            [(0, 0), (0, 1), (0, 1)],  # First line
+            [(1, 0), (1, 1), (1, 2)],  # Second line
+            [(2, 0), (2, 1), (2, 1)],  # Third line
+            [(0, 0), (1, 0), (2, 0)],  # First column
+            [(0, 1), (1, 1), (2, 1)],  # Second column
+            [(0, 2), (1, 2), (2, 2)],  # Third column
+            [(0, 2), (1, 1), (2, 0)],  # Diagonal top right
+            [(0, 0), (1, 1), (2, 2)],  # Diagonal top left
+        ]
 
-        elif self.brett[0][1] == self.brett[1][1] == self.brett[2][1]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+        for wining_position in wining_positions:
+            # [(0, 0), (0, 1), (0, 1)]
+            cell_1, cell_2, cell_3 = wining_position
 
-        elif self.brett[0][2] == self.brett[1][2] == self.brett[2][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
+            if self.brett[cell_1[0]][cell_1[1]] == self.brett[cell_2[0]][cell_2[1]] == self.brett[cell_3[0]][cell_3[1]]:
+                # Check if cells != None
+                if self.brett[cell_1[0]][cell_1[1]]:
+                    winning_sign = self.brett[cell_1[0]][cell_1[1]]
+                    break
 
-        elif self.brett[0][0] == self.brett[1][1] == self.brett[2][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
-
-        elif self.brett[2][0] == self.brett[1][1] == self.brett[0][2]:
-            if self.brett == self.Sign.x:
-                return self.Sign.x
-            elif self.brett == self.Sign.o:
-                return self.Sign.o
-        return None
+        return winning_sign
