@@ -48,13 +48,8 @@ if __name__ == '__main__':
 
     print('\n\nLoop in loop')
 
-    for letter1 in alphabet:
-        if letter1 == 'd':
-            break
-
-        for letter2 in alphabet[::-1]:
-            if letter2 == 'w':
-                break
+    for letter1 in 'abc':  # ['a','b','c']
+        for letter2 in 'zxy':  # ['z','y','x']
             print(letter1, letter2, sep='/', end=' ')
 
     print('\n\nZip')
