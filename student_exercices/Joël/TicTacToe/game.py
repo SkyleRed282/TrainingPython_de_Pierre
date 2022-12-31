@@ -1,11 +1,13 @@
 from typing import Union
-
 from student_exercices.Joël.TicTacToe.board import Board
 from student_exercices.Joël.TicTacToe.sign import Sign
 from student_exercices.Joël.TicTacToe.spieler import Spieler
 
 
 class Game:
+
+
+
     def __init__(self):
         self.spieler1 = Spieler(Sign.o, 'Player 1')
         self.spieler2 = Spieler(Sign.x, 'Player 2')
@@ -25,23 +27,39 @@ class Game:
 
         return None
 
+    def display_result(self):
+
+        # Der Gewinner aus der Methode get_winner wird in der Variable winner gespeichert
+        winner = self.get_winner()
+        # Ist winner gleich None ist Unentschieden
+        if winner is None:
+            print("Unentschieden!")
+
+        # Ist winner nicht gleich None wird der Name des Winner ausgeben
+        else:
+            print(f"Herzlichen Glückwunsch {winner.name} hat gewonnen")
+
     def get_next_player(self) -> None:
+        # Wenn der Spieler gleich ist wie Spieler 1 wechsle den Spieler zu Spieler2 sonst zu Spieler1
         if self.spieler1 == self.current_player:
             self.current_player = self.spieler2
         else:
             self.current_player = self.spieler1
 
+
     def play(self):
 
         # Das Spiel geht solange bis ein Spieler gewonnen hat oder das Board ist voll
+        self.get_players_name()
         while not self.board_full() and not self.get_winner():
             next_move = self.get_next_move()
+            # Klasse Board mit dem Objekt brett mit den Werten O und 2 aus der Variable next_move
 
-            # TODO: update board with next move
-
+            self.board.update_board(self.current_player.sign, position=next_move)
+            #Print von Board
+            print(self.board)
 
             self.get_next_player()
-            print(next_move)
 
     def get_next_move(self) -> Union[tuple[int, int], None]:
 
@@ -49,7 +67,7 @@ class Game:
         next_move_position = None
 
         while not next_move_position:
-            next_move = input(f'{self.current_player.name} next move? [x,y] from top right')
+            next_move = input(f'{self.current_player.name} next move? [x,y] from top left')
 
             # check if text size == 3
             if len(next_move) == 3:
@@ -66,3 +84,8 @@ class Game:
                             next_move_position = (line - 1, column - 1)
 
         return next_move_position
+
+    def get_players_name(self):
+        #Methode zur Eingabe von Spielernamen
+        self.spieler1.name = input('Wie heisst Spieler 1?')
+        self.spieler2.name = input('Wie heisst Spieler 2?')

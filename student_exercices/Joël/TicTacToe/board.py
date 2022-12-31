@@ -15,12 +15,51 @@ class Board:
         else:
             self.brett = copy(self._default_board)
 
+    def __str__(self):
+        str2print = "-------------\n"
+        # Solange Zeile in self.brett dann solange sign in zeile
+        for zeile in self.brett:
+            str2print += "|"
+            for sign in zeile:
+                # Wenn sign gleich None zum str2print str2add hinzufügen sonst str2add und sign.name hinzfügen
+                if type(sign) is Sign:
+                    str2add = " " + sign.name + " |"
+                else:
+                    str2add = "   |"
+                str2print = str2print + str2add
+            # Zeilenumbruch und Line mit Zeichenumbruch
+            str2print = str2print + "\n"
+            str2print = str2print + "-------------\n"
+
+        return str2print
+
+    def update_board(self, sign, position):
+        # Brett laden
+        current_board = self.brett
+        # Zeile die geändert werden muss
+        row_to_change = current_board[position[0]]
+        # sign updated row_to_change in der Tulpe auf der Postion 1
+        row_to_change[position[1]] = sign
+        # row_to_change updated current_board in der Tulpe auf der Postion 0
+        current_board[position[0]] = row_to_change
+        # current_board gib in self.brett
+        self.brett = current_board
+        # Rückgabe vom Wert self.brett
+        return self.brett
+
+    # Board is full, wenn line im brett und wert in line gleich None ist, gibt es False zurück wenn nicht True
     def is_full(self) -> bool:
         for line in self.brett:
             for wert in line:
                 if wert is None:
                     return False
         return True
+
+    def new_board(self):
+        # if Board is full the set Board to default Board for a new Game
+        if self.is_full is True:
+            self.brett = self._default_board
+            return self.brett
 
     def get_winning_sign(self) -> Union[Sign, None]:
 
@@ -32,9 +71,9 @@ class Board:
         # [20] [21] [22]
 
         wining_positions = [
-            [(0, 0), (0, 1), (0, 1)],  # First line
+            [(0, 0), (0, 1), (0, 2)],  # First line
             [(1, 0), (1, 1), (1, 2)],  # Second line
-            [(2, 0), (2, 1), (2, 1)],  # Third line
+            [(2, 0), (2, 1), (2, 2)],  # Third line
             [(0, 0), (1, 0), (2, 0)],  # First column
             [(0, 1), (1, 1), (2, 1)],  # Second column
             [(0, 2), (1, 2), (2, 2)],  # Third column
