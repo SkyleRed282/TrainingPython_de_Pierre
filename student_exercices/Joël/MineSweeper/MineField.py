@@ -10,6 +10,7 @@ class MineField:
 
     def init_field_bombs(self, field_width, field_height):
 
+
         field = []
 
         # für jede linie
@@ -25,6 +26,9 @@ class MineField:
             field.append(new_line)
 
         return field
+
+    # TODO: init bombes based on difficulty
+    # add X bombes in random position from the field
 
     def __str__(self):
 
