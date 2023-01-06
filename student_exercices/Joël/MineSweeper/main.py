@@ -1,7 +1,7 @@
-from student_exercices.Joël.MineSweeper.MineField import MineField
+from student_exercices.Joël.MineSweeper.Game import Game
 
 if __name__ == '__main__':
 
-    mine_field = MineField(9, 9)
+    game = Game()
 
-    print(mine_field)
+

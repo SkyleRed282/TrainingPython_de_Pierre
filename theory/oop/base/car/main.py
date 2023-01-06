@@ -1,5 +1,5 @@
-from bases.theory.poo.base.car.car import Car
-from bases.theory.poo.base.car.parking import Parking
+from theory.oop.base.car.car import Car
+from theory.oop.base.car.parking import Parking
 
 if __name__ == '__main__':
 

@@ -1,24 +1,26 @@
-from student_exercices.Joël.MineSweeper.Mine import Mine, FieldPosition
+from random import randint
+from string import ascii_uppercase as alphabet
+from student_exercices.Joël.MineSweeper.FieldPosition import Mine, FieldPosition, Status
 
 
 class MineField:
 
-    def __init__(self, field_width=10, field_height=12):
-        self.mine_field = self.init_field_bombs(field_width, field_height)
+    def __init__(self, field_width, field_height, amount_bombs_perc):
         self.field_width = field_width
         self.field_height = field_height
+        self.mine_field = self.init_field()
+        self.place_bombs(amount_bombs_perc)
 
-    def init_field_bombs(self, field_width, field_height):
-
+    def init_field(self):
 
         field = []
 
         # für jede linie
-        for _ in range(field_width):
+        for _ in range(self.field_width):
             # neue liste erfassen
             new_line = []
             # für jede "mine"
-            for _ in range(field_height):
+            for _ in range(self.field_height):
                 # neue empty "mine" in linie liste einfugen
                 new_line.append(FieldPosition(Mine.LEER))
 
@@ -27,8 +29,31 @@ class MineField:
 
         return field
 
-    # TODO: init bombes based on difficulty
-    # add X bombes in random position from the field
+    def remaining_empty_hidden_position(self):
+        counter = 0
+        for line in self.mine_field:
+            for field_postion in line:
+                if field_postion.mine == Mine.LEER and field_postion.status == Status.HIDDEN:
+                    counter += 1
+
+        return counter
+
+    def place_bombs(self, amount_bombs_perc):
+
+        # Give the number of bombs
+        bombs_to_place = int(amount_bombs_perc / 100 * self.field_width * self.field_height)
+
+        # Until we placed all the bombes
+        while bombs_to_place > 0:
+
+            # random postion für die neue Bombe
+            position_x = randint(0, self.field_width - 1)
+            position_y = randint(0, self.field_height - 1)
+
+            # Ist die Zelle leer platzieren wir eine Bombe
+            if self.mine_field[position_x][position_y].mine is Mine.LEER:
+                self.mine_field[position_x][position_y] = FieldPosition(Mine.BOMBE)
+                bombs_to_place -= 1
 
     def __str__(self):
 
@@ -40,18 +65,16 @@ class MineField:
         field_str = '   '
 
         # column headers
-        for zahl in range(1, self.field_width+1):
+        for zahl in range(1, self.field_width + 1):
             field_str += str(zahl) + ' '
-
 
         # for each line
         for line_nbr, line_lst in enumerate(self.mine_field):
 
-            field_str += f'\n {line_nbr+1} '
+            field_str += f'\n {alphabet[line_nbr]} '
 
             # for each element
             for field_position in line_lst:
                 field_str += f'{field_position} '
-
 
         return field_str
