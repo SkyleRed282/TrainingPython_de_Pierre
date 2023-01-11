@@ -93,6 +93,7 @@ if __name__ == '__main__':
 
     print('key5', my_dict.get('key5', 'Nothing'))  # None
     print('key1', my_dict.get('key1', 'Nothing2'))  # None
+
     # print(my_dict['key5'])
 
     print(list(my_dict.keys()))
