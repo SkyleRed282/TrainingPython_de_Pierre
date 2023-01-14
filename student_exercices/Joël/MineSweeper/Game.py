@@ -1,6 +1,6 @@
+from student_exercices.Joël.MineSweeper.FieldPosition import Mine
 from student_exercices.Joël.MineSweeper.MineField import MineField
 from string import ascii_uppercase as alphabet
-
 
 class Game:
     def __init__(self):
@@ -15,29 +15,42 @@ class Game:
         # Ask for difficulty
         chosen_difficulty = None
         while chosen_difficulty not in difficult_bombs.keys():
-            chosen_difficulty = input('Prompt the difficulty of the Game. "light", "middle", "hard" and "heavy"!')
+            # chosen_difficulty = input('Prompt the difficulty of the Game. "light", "middle", "hard" and "heavy"!')
+            chosen_difficulty = 'heavy' # TODO: change
 
-        self.mine_field = MineField(9, 9, difficult_bombs[chosen_difficulty])
+        self.field = MineField(9, 9, difficult_bombs[chosen_difficulty])
         self.play()
 
     def play(self):
 
-        while self.mine_field.remaining_empty_hidden_position() > 0:
-            print(self.ask_next_position())
+        # Until the game is not finished (win or lose)
+        while self.field.remaining_empty_hidden_position() > 0:
+            index_x, index_y = self.ask_next_position()
+            field_position = self.field.mine_field[index_x][index_y]
+            # If the position has a bomb
+            if field_position.mine == Mine.BOMBE:
+                print('You loose!\n', self.field.display_field(reveal_all=True))
+                break
+            # We reaveal the position and neighbours
+            self.field.reveal_position(index_x, index_y)
+
 
     def ask_next_position(self):
-        print(self.mine_field)
+        print(self.field)
 
         position_valid = False
         while not position_valid:
-            choose_field = input('Wähle ein Feldposition? Bsp. A3')
+            choose_field = input('Wähle ein Feldposition? Bsp. A3 ')
 
-            if len(choose_field) != 2 or choose_field[0].upper() in alphabet or not choose_field[1].isdigit():
+            if len(choose_field) != 2 or not choose_field[0].upper() in alphabet or not choose_field[1].isdigit():
                 continue
 
-            if alphabet.index(choose_field[0]) > self.mine_field.field_height - 1:
+            # Line Letter position is < as field height
+            if alphabet.index(choose_field[0]) > self.field.field_height-1:
                 continue
-            if int(choose_field[1]) > self.mine_field.field_width - 1:
+
+            # Column is < field width
+            if 0 < int(choose_field[1]) > self.field.field_width:
                 continue
 
             return alphabet.index(choose_field[0]), int(choose_field[1]) - 1

@@ -7,11 +7,16 @@ class FieldPosition:
         self.status = Status.HIDDEN
 
     def __str__(self):
-        if self.status == Status.HIDDEN:
-            return '?'
+        return self.display_position()
 
-        if self.status == Status.MARKED:
-            return 'X'
+    def display_position(self, reveal_all=False):
+
+        if not reveal_all:
+            if self.status == Status.HIDDEN:
+                return '?'
+
+            if self.status == Status.MARKED:
+                return 'X'
 
         if self.mine == Mine.BOMBE:
             return 'B'

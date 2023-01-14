@@ -38,6 +38,24 @@ class MineField:
 
         return counter
 
+    def reveal_position(self, index_x, index_y):
+        print(self.get_neighbours_position(index_x, index_y))
+
+    def get_neighbours_position(self, index_x, index_y):
+
+        # X X X
+        # X Y X
+        # X X X
+        field_positions = []
+        for pos_x in range(index_x-1, index_x+2):
+            for pos_y in range(index_y-1, index_y+2):
+                # not the base position
+                if pos_x != index_x or pos_y != index_y:
+                    if pos_x >= 0 < self.field_width and pos_y >= 0 < self.field_height:
+                        field_positions.append((pos_x, pos_y))
+
+        return field_positions
+
     def place_bombs(self, amount_bombs_perc):
 
         # Give the number of bombs
@@ -56,7 +74,9 @@ class MineField:
                 bombs_to_place -= 1
 
     def __str__(self):
+        return self.display_field()
 
+    def display_field(self, reveal_all=False):
         #    1  2  3
         # 1  ?  ?  ?
         # 2  ?  ?  ?
@@ -75,6 +95,6 @@ class MineField:
 
             # for each element
             for field_position in line_lst:
-                field_str += f'{field_position} '
+                field_str += f'{field_position.display_position(reveal_all)} '
 
         return field_str
