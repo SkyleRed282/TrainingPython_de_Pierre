@@ -1,4 +1,5 @@
 class Author:
+
     anzahl_author = 0
 
     def __init__(self, vorname, nachname):
