@@ -1,5 +1,5 @@
 # I'm a comment - indentation is important
-print('I\'m printing inside the terminal')
+print('I\'m printing inside the terminal. \tTabulation \nNew line')
 
 # Attribute + Method call
 print('hello world'.capitalize())
@@ -48,7 +48,10 @@ empty_list = []  # list()
 my_list[1] = 'dog'
 print(my_list)
 
-my_list.append('cat')
+my_list.append(['a', 'b', 'c'])
+print(my_list)
+
+my_list.extend(['1', '2', '3'])
 print(my_list)
 
 my_list.insert(0, 'bird')
@@ -61,6 +64,7 @@ print(my_tuple[2][0])
 print(' === set === ')
 # set = no duplicates
 my_set = {'a', 'a', 'b'}
+
 empty_set = set()
 print(my_set)
 print(list(set([1, 1, 2, 3, 4])))

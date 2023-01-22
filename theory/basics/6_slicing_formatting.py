@@ -34,4 +34,4 @@ if __name__ == '__main__':
     print('My name is ' + firstname + ' and I\'m ' + str(age))
 
     # Print multiple variables at once
-    print('My name is', firstname, 'and I\'m', age)
+    print('My name is', firstname, 'and I\'m', age, sep=' - ', end=' EOL')
