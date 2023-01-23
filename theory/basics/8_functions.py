@@ -5,7 +5,7 @@ def print_random_number_0_x(x: int) -> None:
     """
     This function print a random number in range [0,x]
     """
-    print('Print inside function:', random.sample(range(0, x), 1)[0])
+    print('Print inside function:', random.randint(0, x))
 
 
 def print_random_number_0_9() -> None:
@@ -19,14 +19,14 @@ def get_random_number_0_x(x: int) -> int:
     """
     This function return a random number in range [0,x]
     """
-    return random.sample(range(0, x), 1)[0]
+    return random.randint(0, x)
 
 
 def get_random_number_0_9() -> int:
     """
     This function return a random number in range [0,10]
     """
-    return get_random_number_0_x(10)
+    return get_random_number_0_x(9)
 
 
 def get_random_number_0_x_optional(x: int = 20) -> int:
@@ -40,6 +40,7 @@ def get_random_value_in_values(*values) -> int | str:
     """
     This function return a random value from a list of parameters
     """
+    print(values)
     return random.sample(values, 1)[0]
 
 
