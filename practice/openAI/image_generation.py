@@ -3,11 +3,11 @@ import openai
 
 if __name__ == '__main__':
 
-    openai.api_key = os.environ.get("OPENAI_API_KEY")
+    openai.api_key = os.environ.get("OPENAI_KEY")
     response = openai.Image.create(
-        prompt="Peinture d'un couché de soleil sur une plage",
-        n=1,
-        size="1024x1024"
+        prompt="Logo cuisine",
+        n=3,
+        size="256x256"
     )
     print(response)
 

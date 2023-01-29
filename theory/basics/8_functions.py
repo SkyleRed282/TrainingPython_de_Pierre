@@ -10,7 +10,7 @@ def print_random_number_0_x(x: int) -> None:
 
 def print_random_number_0_9() -> None:
     """
-    This function print a random number in range [0,10]
+    This function print a random number in range [0,9]
     """
     print_random_number_0_x(9)
 
@@ -36,12 +36,15 @@ def get_random_number_0_x_optional(x: int = 20) -> int:
     return get_random_number_0_x(x)
 
 
-def get_random_value_in_values(*values) -> int | str:
+def get_sum(*values) -> int:
     """
     This function return a random value from a list of parameters
     """
-    print(values)
-    return random.sample(values, 1)[0]
+    total = 0
+    for value in values:
+        total += value
+
+    return total
 
 
 def args_and_kwargs(*positional_arguments, **keyword_arguments):
@@ -52,6 +55,7 @@ def args_and_kwargs(*positional_arguments, **keyword_arguments):
 
 
 if __name__ == '__main__':
+
     param = 20
 
     # No return, one parameter
@@ -76,7 +80,7 @@ if __name__ == '__main__':
 
     # Undefined amount of parameter
     print("\n == Undefined amount of parameter == ")
-    print('Return:', get_random_value_in_values(1, 'A', 3, 5, 'Z', 7, 9))
+    print('Return:', get_sum(1, 2, 3, 4))
 
     # args kwargs
     print("\n == Args kwargs == ")

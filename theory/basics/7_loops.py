@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     print('\n\nBreak')
 
-    for letter in alphabet:  # ['a','b', ..., z]
+    for letter in alphabet:  # ['a','b', ..., 'z']
         print(letter, end=' ')
         if letter == 'c':
             break
