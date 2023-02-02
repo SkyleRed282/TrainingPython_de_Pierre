@@ -39,10 +39,10 @@ print(5 * 'x')
 
 # Structures
 print(' === structures === ')
-my_list = ['a', 1, 'test', 'toto', 1]
-print(my_list)
+my_list = ['a', 5, 'test', 'toto', 7]
 print(['abc'] * 5)
 
+print(my_list)
 empty_list = []  # list()
 
 my_list[1] = 'dog'
@@ -59,7 +59,7 @@ print(my_list)
 
 print(' === tuple === ')
 my_tuple = ('abc', 1, [1, 2, 3])
-print(my_tuple[2][0])
+print(type(my_tuple), my_tuple[2][0])
 
 print(' === set === ')
 # set = no duplicates
