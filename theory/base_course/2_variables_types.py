@@ -18,7 +18,7 @@ print(' === data type === ')
 my_string = 'abc'  # my_string = ['a', 'b', 'c']
 print(my_string[0])
 
-my_multiline_string = ''' 
+my_multiline_string = '''
 SELECT *
 FROM animals
 WHERE age > 10
@@ -31,7 +31,7 @@ my_bool = True
 
 # Casting
 print(' === casting === ')
-var3 = '100'
+var3 = '100' # 100
 print(type(var3))
 print(int(var3) + 5)
 print(var3 + str(5))
