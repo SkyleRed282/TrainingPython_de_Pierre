@@ -21,6 +21,7 @@ print(True and False)
 print(True or False)
 print(not False)
 print(any([False, False, False, False, True]))
+print(all([False, False, False, False, True]))
 
 # identity operators
 print(' == identity operators ==')
@@ -31,3 +32,4 @@ print(' == membership operator ==')
 print('x' in 'axc')
 print('x' in ['a', 'x', 'c'])
 print('axc' in ['a', 'x', 'c'])
+print(['a', 'x'] in ['a', 'x', 'c'])

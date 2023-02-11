@@ -13,6 +13,7 @@ print(my_str[::-1])
 print(my_str.replace('python', 'java'))
 print(my_str.index('python'))
 print(my_str.split())
+print('a,b,c,d'.split(','))
 
 # formatting
 print(' === formatting === ')
@@ -32,4 +33,5 @@ print("My name is %(firstname)s and I'm %(age)s" % data_dict)
 print('My name is ' + firstname + ' and I\'m ' + str(age))
 
 # Print multiple variables at once
-print('My name is', firstname, 'and I\'m', age, sep=' - ', end=' EOL')
+print('a', 'b', 'c', 'd', sep=',')
+print('My name is', firstname, 'and I\'m', age, sep=' | ', end=' EOL')
