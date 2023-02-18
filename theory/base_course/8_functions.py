@@ -1,6 +1,7 @@
 import random
 
 
+
 def print_random_number_0_x(x: int) -> None:
     """
     This function print a random number in range [0,x]
