@@ -2,7 +2,7 @@
 print('I\'m printing inside the terminal. \tTabulation \nNew line')
 
 # Attribute + Method call
-print('hello world'.capitalize())
+print('hello world'.title())
 
 # Assignation
 var1 = 123
@@ -18,6 +18,9 @@ print(' === data type === ')
 my_string = 'abc'  # my_string = ['a', 'b', 'c']
 print(my_string[0])
 
+my_list = ['a', 'b', 'c']
+print(my_list[0])
+
 my_multiline_string = '''
 SELECT *
 FROM animals
@@ -27,14 +30,18 @@ LIMIT 10;
 
 my_int = 1_000_000
 my_float = 2.4
-my_bool = True
+my_bool = True  # False
 
 # Casting
 print(' === casting === ')
-var3 = '100' # 100
-print(type(var3))
-print(int(var3) + 5)
-print(var3 + str(5))
+hundred_as_str = '100'  # 100
+print(type(hundred_as_str))
+
+hundred_as_int = int(hundred_as_str)
+print(type(hundred_as_int))
+print(hundred_as_int + 5)
+
+print(hundred_as_str + str(5)+' abc')
 print(5 * 'x')
 
 # Structures

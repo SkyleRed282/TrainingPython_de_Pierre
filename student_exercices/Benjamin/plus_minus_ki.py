@@ -11,4 +11,3 @@ while feedback != '=':
 
     # If correct => Win
     # Else => receive a feedback on the direction (< oder >)
-   
