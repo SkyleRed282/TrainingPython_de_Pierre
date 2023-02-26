@@ -25,3 +25,8 @@ wb = {
 print(wb)
 print(wb[-1][25])
 print(wb["sub_dict"][1][0][3])
+
+my_set = [
+    5, ['apple', 'orange'], ('birne', 7, 'Kuchen')
+]
+print(my_set[2][2][1] )

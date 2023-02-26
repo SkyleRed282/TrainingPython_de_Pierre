@@ -1,10 +1,10 @@
 import requests
 
 try:
-   # resp = requests.get('http://www.google.fr')
+    resp = requests.get('http://www.google.fr')
     # print(resp.status_code)
     # raise Exception('Exception !!!')
-    1 / 0
+
 except ZeroDivisionError as e:
     print(f'ZeroDivisionError: {e}')
 except Exception as e:
