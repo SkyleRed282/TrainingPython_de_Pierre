@@ -10,6 +10,7 @@ class MineField:
         self.field_height = field_height
         self.mine_field = self.init_field()
         self.place_bombs(amount_bombs_perc)
+        self.compute_bomb_counter()
 
     def init_field(self):
 
@@ -35,24 +36,53 @@ class MineField:
             for field_postion in line:
                 if field_postion.mine == Mine.LEER and field_postion.status == Status.HIDDEN:
                     counter += 1
-
         return counter
 
-    def reveal_position(self, index_x, index_y):
-        print(self.get_neighbours_position(index_x, index_y))
+    def reveal_position(self, index_x, index_y, full_display=True):
+        field_position = self.mine_field[index_x][index_y]
+
+        # If we need to display the empty cell (no bomb near by or user clicked on it)
+        if full_display or field_position.bomb_counter == 0:
+            field_position.status = Status.VISIBLE
+            self.reveal_neighbour_cells(index_x, index_y)
+
+        # Display amount of nearby bombs
+        else:
+            field_position.status = Status.BOMB_COUNTER
+
+    def reveal_neighbour_cells(self, index_x, index_y):
+        for neighbour_position in self.get_neighbours_position(index_x, index_y):
+            neighbour_field_position = self.mine_field[neighbour_position[0]][neighbour_position[1]]
+            if neighbour_field_position.status == Status.HIDDEN:
+                self.reveal_position(neighbour_position[0], neighbour_position[1], False)
+
+    def get_amount_nearby_bombs(self, index_x, index_y):
+        neighbours_cells = self.get_neighbours_position(index_x, index_y)
+        bomb_count = 0
+        for field_postion in neighbours_cells:
+            if field_postion[2].mine == Mine.BOMBE:
+                bomb_count += 1
+        return bomb_count
+
+    def compute_bomb_counter(self):
+        for index_x, line in enumerate(self.mine_field):
+            for index_y, field_postion in enumerate(line):
+                self.mine_field[index_x][index_y].bomb_counter = self.get_amount_nearby_bombs(index_x, index_y)
 
     def get_neighbours_position(self, index_x, index_y):
 
         # X X X
         # X Y X
         # X X X
+
         field_positions = []
-        for pos_x in range(index_x-1, index_x+2):
-            for pos_y in range(index_y-1, index_y+2):
+
+        for pos_x in range(index_x - 1, index_x + 2):
+            for pos_y in range(index_y - 1, index_y + 2):
                 # not the base position
                 if pos_x != index_x or pos_y != index_y:
-                    if pos_x >= 0 < self.field_width and pos_y >= 0 < self.field_height:
-                        field_positions.append((pos_x, pos_y))
+                    if 0 <= pos_x < self.field_width and 0 <= pos_y < self.field_height:
+                        field_positions.append((pos_x, pos_y, self.mine_field[pos_x][pos_y]))
 
         return field_positions
 

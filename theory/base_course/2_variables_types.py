@@ -12,6 +12,7 @@ print(var2)
 # Multiple assignation
 x, y, z = "Orange", "Banana", "Cherry"
 a, b, c = ["Orange", "Banana", "Cherry"]
+x, y = y, x
 
 # Data type
 print(' === data type === ')
@@ -41,7 +42,7 @@ hundred_as_int = int(hundred_as_str)
 print(type(hundred_as_int))
 print(hundred_as_int + 5)
 
-print(hundred_as_str + str(5)+' abc')
+print(hundred_as_str + str(5) + ' abc')
 print(5 * 'x')
 
 # Structures

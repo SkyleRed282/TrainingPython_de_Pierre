@@ -3,6 +3,7 @@ from student_exercices.Joël.MineSweeper.MineField import MineField
 from string import ascii_uppercase as alphabet
 
 class Game:
+
     def __init__(self):
         # Dictionary with difficult
         difficult_bombs = {
