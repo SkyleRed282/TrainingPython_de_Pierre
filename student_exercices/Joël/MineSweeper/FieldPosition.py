@@ -6,15 +6,17 @@ class FieldPosition:
         self.mine = mine
         self.status = Status.HIDDEN
         self.bomb_counter = bomb_counter
+
     def __str__(self):
         return self.display_position()
+
     def __repr__(self):
         return self.display_position()
 
     def display_position(self, reveal_all=False):
 
         if not reveal_all:
-            if self.status == Status.HIDDEN:
+            if self.status == Status.HIDDEN or self.mine == Mine.BOMBE:
                 return '?'
 
             if self.status == Status.MARKED:
@@ -23,11 +25,13 @@ class FieldPosition:
             if self.status == Status.BOMB_COUNTER:
                 return self.bomb_counter
 
-        if self.mine == Mine.BOMBE:
-            return 'B'
+        else:
+            if self.mine == Mine.BOMBE:
+                return 'B'
 
         if self.mine == Mine.LEER:
             return ' '
+
 
 class Mine(Enum):
     BOMBE = 1

@@ -46,12 +46,21 @@ class MineField:
             field_position.status = Status.VISIBLE
             self.reveal_neighbour_cells(index_x, index_y)
 
+    def mark_position(self, index_x, index_y):
+        field_position = self.mine_field[index_x][index_y]
+
+        if field_position.status == Status.HIDDEN:
+            field_position.status = Status.MARKED
+        elif field_position.status == Status.MARKED:
+            field_position.status = Status.VISIBLE
+
+
         # Display amount of nearby bombs
         else:
             field_position.status = Status.BOMB_COUNTER
 
     def reveal_neighbour_cells(self, index_x, index_y):
-        for neighbour_position in self.get_neighbours_position(index_x, index_y):
+        for neighbour_position in self.get_neighbours_position(index_x, index_y, False):
             neighbour_field_position = self.mine_field[neighbour_position[0]][neighbour_position[1]]
             if neighbour_field_position.status == Status.HIDDEN:
                 self.reveal_position(neighbour_position[0], neighbour_position[1], False)
@@ -69,7 +78,7 @@ class MineField:
             for index_y, field_postion in enumerate(line):
                 self.mine_field[index_x][index_y].bomb_counter = self.get_amount_nearby_bombs(index_x, index_y)
 
-    def get_neighbours_position(self, index_x, index_y):
+    def get_neighbours_position(self, index_x, index_y, edges=True):
 
         # X X X
         # X Y X
@@ -79,6 +88,24 @@ class MineField:
 
         for pos_x in range(index_x - 1, index_x + 2):
             for pos_y in range(index_y - 1, index_y + 2):
+
+                if not edges:
+                    # top left
+                    if pos_x == index_x - 1 and pos_y == index_y - 1:
+                        continue
+
+                    # top right
+                    elif pos_x == index_x + 1 and pos_y == index_y - 1:
+                        continue
+
+                    # bottom left
+                    elif pos_x == index_x - 1 and pos_y == index_y + 1:
+                        continue
+
+                    # bottom right
+                    elif pos_x == index_x + 1 and pos_y == index_y + 1:
+                        continue
+
                 # not the base position
                 if pos_x != index_x or pos_y != index_y:
                     if 0 <= pos_x < self.field_width and 0 <= pos_y < self.field_height:
@@ -104,24 +131,26 @@ class MineField:
                 bombs_to_place -= 1
 
     def __str__(self):
-        return self.display_field()
+        return self.get_field_as_str()
 
-    def display_field(self, reveal_all=False):
+    def get_field_as_str(self, reveal_all=False):
         #    1  2  3
         # 1  ?  ?  ?
         # 2  ?  ?  ?
         # 3  ?  ?  ?
 
-        field_str = '   '
+        field_str = '    '
 
         # column headers
         for zahl in range(1, self.field_width + 1):
             field_str += str(zahl) + ' '
 
+        field_str += '\n'
+
         # for each line
         for line_nbr, line_lst in enumerate(self.mine_field):
 
-            field_str += f'\n {alphabet[line_nbr]} '
+            field_str += f'\n {alphabet[line_nbr]}  '
 
             # for each element
             for field_position in line_lst:

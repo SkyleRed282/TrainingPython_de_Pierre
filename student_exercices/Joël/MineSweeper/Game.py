@@ -26,24 +26,47 @@ class Game:
 
         # Until the game is not finished (win or lose)
         while self.field.remaining_empty_hidden_position() > 0:
-            index_x, index_y = self.ask_next_position()
+            index_x, index_y, is_marked = self.ask_next_position()
             field_position = self.field.mine_field[index_x][index_y]
-            # If the position has a bomb
-            if field_position.mine == Mine.BOMBE:
-                print('You loose!\n', self.field.display_field(reveal_all=True))
-                break
-            # We reaveal the position and neighbours
-            self.field.reveal_position(index_x, index_y)
+
+            if is_marked:
+                self.field.mark_position(index_x, index_y)
+            else:
+
+                # If the position has a bomb
+                if field_position.mine == Mine.BOMBE:
+                    break
+
+                # We reveal the position and neighbours
+                self.field.reveal_position(index_x, index_y)
+
+        if self.field.remaining_empty_hidden_position() == 0:
+            print('You win!')
+        else:
+            print('You lost!')
+
+        print(self.field.get_field_as_str(reveal_all=True))
 
 
     def ask_next_position(self):
         print(self.field)
 
         position_valid = False
-        while not position_valid:
-            choose_field = input('Wähle ein Feldposition? Bsp. A3 ')
+        is_mark = False
 
-            if len(choose_field) != 2 or not choose_field[0].upper() in alphabet or not choose_field[1].isdigit():
+        while not position_valid:
+            choose_field = input('Wähle ein Feldposition? Bsp. A3 oder A3X (markieren)')
+
+            # User want to mark the cell?
+            if len(choose_field) == 3:
+                if choose_field[-1] != 'X':
+                    continue
+                else:
+                    is_mark = True
+            elif len(choose_field) != 2:
+                continue
+
+            if not choose_field[0].upper() in alphabet or not choose_field[1].isdigit():
                 continue
 
             # Line Letter position is < as field height
@@ -54,4 +77,4 @@ class Game:
             if 0 < int(choose_field[1]) > self.field.field_width:
                 continue
 
-            return alphabet.index(choose_field[0]), int(choose_field[1]) - 1
+            return alphabet.index(choose_field[0]), int(choose_field[1]) - 1, is_mark
