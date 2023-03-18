@@ -16,11 +16,12 @@ class FieldPosition:
     def display_position(self, reveal_all=False):
 
         if not reveal_all:
-            if self.status == Status.HIDDEN or self.mine == Mine.BOMBE:
-                return '?'
 
             if self.status == Status.MARKED:
                 return 'X'
+
+            if self.status == Status.HIDDEN or self.mine == Mine.BOMBE:
+                return '?'
 
             if self.status == Status.BOMB_COUNTER:
                 return self.bomb_counter

@@ -41,10 +41,14 @@ class MineField:
     def reveal_position(self, index_x, index_y, full_display=True):
         field_position = self.mine_field[index_x][index_y]
 
-        # If we need to display the empty cell (no bomb near by or user clicked on it)
+        # If we need to display the empty cell (no bomb nearby or user clicked on it)
         if full_display or field_position.bomb_counter == 0:
             field_position.status = Status.VISIBLE
             self.reveal_neighbour_cells(index_x, index_y)
+
+        # Display amount of nearby bombs
+        else:
+            field_position.status = Status.BOMB_COUNTER
 
     def mark_position(self, index_x, index_y):
         field_position = self.mine_field[index_x][index_y]
@@ -53,7 +57,6 @@ class MineField:
             field_position.status = Status.MARKED
         elif field_position.status == Status.MARKED:
             field_position.status = Status.VISIBLE
-
 
         # Display amount of nearby bombs
         else:

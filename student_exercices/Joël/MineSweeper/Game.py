@@ -47,7 +47,6 @@ class Game:
 
         print(self.field.get_field_as_str(reveal_all=True))
 
-
     def ask_next_position(self):
         print(self.field)
 
