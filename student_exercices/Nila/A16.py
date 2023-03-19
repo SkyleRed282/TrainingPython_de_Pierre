@@ -15,3 +15,17 @@ def b(x):
 
 
 print(b(5))
+
+
+# c
+
+def c(lst, value):
+    if value not in lst:
+        lst.append(value)
+
+
+liste_c = [1, 4, 5]
+c(liste_c, 4)
+print(liste_c)
+c(liste_c, 6)
+print(liste_c)
