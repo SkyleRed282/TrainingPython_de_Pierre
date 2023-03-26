@@ -83,6 +83,13 @@ class MineField:
 
     def get_neighbours_position(self, index_x, index_y, edges=True):
 
+        # Ex. If Y = (5,5) they tested if all neighbours have a bomb
+        # => From (4,4) to (6,6) the whole square is checked
+
+        # (4,6) (5,6) (6,6)
+        # (4,5) (uns) (6,5)
+        # (4,4) (5,4) (6,4)
+
         # X X X
         # X Y X
         # X X X

@@ -2,6 +2,7 @@ from student_exercices.Joël.MineSweeper.FieldPosition import Mine
 from student_exercices.Joël.MineSweeper.MineField import MineField
 from string import ascii_uppercase as alphabet
 
+
 class Game:
 
     def __init__(self):
@@ -16,8 +17,7 @@ class Game:
         # Ask for difficulty
         chosen_difficulty = None
         while chosen_difficulty not in difficult_bombs.keys():
-            # chosen_difficulty = input('Prompt the difficulty of the Game. "light", "middle", "hard" and "heavy"!')
-            chosen_difficulty = 'heavy' # TODO: change
+            chosen_difficulty = input('Prompt the difficulty of the Game. "light", "middle", "hard" and "heavy"!')
 
         self.field = MineField(9, 9, difficult_bombs[chosen_difficulty])
         self.play()
@@ -69,7 +69,7 @@ class Game:
                 continue
 
             # Line Letter position is < as field height
-            if alphabet.index(choose_field[0]) > self.field.field_height-1:
+            if alphabet.index(choose_field[0]) > self.field.field_height - 1:
                 continue
 
             # Column is < field width
@@ -77,3 +77,7 @@ class Game:
                 continue
 
             return alphabet.index(choose_field[0]), int(choose_field[1]) - 1, is_mark
+
+
+if __name__ == '__main__':
+    game = Game()
