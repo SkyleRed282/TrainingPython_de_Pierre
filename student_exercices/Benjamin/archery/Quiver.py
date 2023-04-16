@@ -1,9 +1,11 @@
 from student_exercices.Benjamin.archery.ArrowType import ArrowType
+from student_exercices.Benjamin.archery.Buyable import Buyable
 
 
-class Quiver:
+class Quiver(Buyable):
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity: int, price: float, name:str):
+        super().__init__(price, name)
         self.capacity = capacity
         self.remaining_arrows = 0
         self.arrow_type = None

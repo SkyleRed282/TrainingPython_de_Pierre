@@ -1,14 +1,16 @@
+from student_exercices.Benjamin.archery.Archer import Archer
 from student_exercices.Benjamin.archery.ArrowType import ArrowType
 from student_exercices.Benjamin.archery.Bow import Bow
 from student_exercices.Benjamin.archery.Quiver import Quiver
+archer = Archer(1000, 'MAX MUSTERMANN')
+quiver = Quiver(10, 81, 'BEARPAW Rückenköcher Back Pack Traditional')
+bow = Bow(479, 0.9, 8, 'DRAKE Pathfinder Green Complete - 40-65 lbs - Compoundbogen')
+arrow = ArrowType(5.60, 0.8, 'Komplettpfeil | PICEA - Holz - mit Naturfedern | 28-32 Zoll')
 
-bad_arrow = ArrowType(2.5, 0.5)
-good_arrow = ArrowType(15, 0.95)
 
-q1 = Quiver(20)
-q1.fill(10, bad_arrow)
-q1.fill(15, bad_arrow)
+archer.buy(quiver, 1)
+archer.buy(bow, 1)
+archer.buy(arrow, 20)
 
-q1.fill(10, good_arrow)
-
-b1 = Bow(1500, 0.9, 800)
+print(archer)
+archer.buy(bow, 1)
