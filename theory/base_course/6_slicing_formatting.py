@@ -34,4 +34,4 @@ print('My name is ' + firstname + ' and I\'m ' + str(age))
 
 # Print multiple variables at once
 print('a', 'b', 'c', 'd', sep=',')
-print('My name is', firstname, 'and I\'m', age, sep=' | ', end=' EOL')
+print('My name is', firstname, 'and I\'m', age, sep=' | ', end='\n')
