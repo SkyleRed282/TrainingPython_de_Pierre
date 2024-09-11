@@ -1,9 +1,11 @@
 import requests
 
 try:
-    resp = requests.get('http://www.google.fr')
-    # print(resp.status_code)
-    # raise Exception('Exception !!!')
+    resp = requests.get('https://levicode2024.github.io/to-do/')
+    print(resp.text)
+    resp.raise_for_status()
+
+    #raise Exception('Exception !!!')
 
 except ZeroDivisionError as e:
     print(f'ZeroDivisionError: {e}')
