@@ -5,8 +5,8 @@ print('I\'m printing inside the terminal. \tTabulation \nNew line')
 print('hello world'.title())
 
 # Assignation
-var1 = 123
-var2 = var1 + 2
+my_var_1 = 123
+var2 = my_var_1 + 2
 print(var2)
 
 # Multiple assignation
@@ -30,6 +30,8 @@ LIMIT 10;
 '''
 
 my_int = 1_000_000
+print(my_int)
+
 my_float = 2.4
 my_bool = True  # False
 
@@ -73,7 +75,7 @@ print(' === set === ')
 # set = no duplicates
 my_set = {'a', 'a', 'b'}
 
-empty_set = set()
+empty_set = set() # {} => dictionary
 print(my_set)
 print(list(set([1, 1, 2, 3, 4])))
 
