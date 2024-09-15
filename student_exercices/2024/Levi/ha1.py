@@ -1,0 +1,11 @@
+int1 = 3  # int
+str1 = '65'  # string
+str2 = 'ABCD'.title()  # string
+int2 = int('85')  # int
+str3 = str(4399)  # str
+str4 = float('6.5')  # float
+list1 = [1, 2, 3]  # liste
+set1 = {4, 5, [12]}  # set
+dic1 = {4: 4, 5: 'abc'}  # dict
+tupel1 = (5, 6, 7)  # tuple
+boolean1 = 246 > 45  # boolean
