@@ -23,3 +23,4 @@ print(animals)
 animals[3] = animals[3].title()
 print(animals)
 
+

@@ -28,10 +28,21 @@ def generate_hidden_quote(text: str):
 
 
 def show_letter(user_letter, quote_hidden, quote):
+    # _x__ ___ _x__
+    # axbd abc axcd
+
+    new_quote_hidden = ''
+    for index, symbol in enumerate(quote):
+        if symbol.lower() == user_letter:
+            new_quote_hidden += quote[index]
+        else:
+            new_quote_hidden += quote_hidden[index]
+
+    return new_quote_hidden
 
 
-
-    return quote_hidden
+def draw_hangman(remaining_lives):
+    print('x')
 
 
 if __name__ == '__main__':
@@ -40,14 +51,44 @@ if __name__ == '__main__':
     api_url = 'https://api.chucknorris.io/jokes/random'
     quote_dict = get_quotes(api_url)
     visible_quote = quote_dict['value']
+    # words = quote.split()
+    # visible_quote = ''
+    # for word in words:
+    #     if len(visible_quote) < 50:
+    #         visible_quote += f' {word}'
+    # visible_quote = visible_quote[1:]
+
+    for symbol in '!.?':
+        if symbol in visible_quote:
+            visible_quote = visible_quote.split(symbol)[0] + symbol
     hidden_quote = generate_hidden_quote(visible_quote)
 
     lives = 6
+    guessed_letters = ''
+
     # solange das Spiel läuft
-    while lives >0 and '_' in hidden_quote:
+    while lives > 0 and '_' in hidden_quote:
+        print(f'{hidden_quote} | Lives : {lives}/6'),
 
-        # Ask for a letter while the letter is valid (only one letter)
-        show_letter(guess, hidden_quote, visible_quote)
-        print(hidden_quote)
+        while True:
+            guess = input('Letter : ')
+            if guess in guessed_letters:
+                print(f'Letter {guess} already tried')
+            elif guess not in alphabet:
+                print(f'Letter {guess} is not a letter')
+            elif len(guess) != 1:
+                print(f'Only one letter at the time!')
+            elif guess:
+                guessed_letters += guess
+                break
 
+        if guess in visible_quote.lower():
+            hidden_quote = show_letter(guess, hidden_quote, visible_quote)
+        else:
+            draw_hangman()
+            lives -= 1
 
+    if lives > 0:
+        print(f'You won, the quote to find was: *{visible_quote}*')
+    else:
+        print(f'You lost, the quote to find was: *{visible_quote}*')

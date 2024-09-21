@@ -1,7 +1,15 @@
+from pprint import pprint
+
 # arithmetics
 print(' == arithmetic ==')
 print(1 * 2 / 2 - 3 + 5)
-print(5 % 2)  # Ex: repartition of items in boxes
+print(5 % 2)
+
+# Ex of %: repartition of student in classrooms
+class_rooms = [[], [], [], [], []]
+for student_nbr in range(1, 22):
+    class_rooms[student_nbr % 5].append(student_nbr)
+pprint(class_rooms)
 print(5 // 2)
 
 # assignment
@@ -25,7 +33,8 @@ print(all([False, False, False, False, True]))
 
 # identity operators
 print(' == identity operators ==')
-print(type(1) is int)
+print(type(IndexError) is LookupError)
+print(type('1') is str)
 
 # membership operator
 print(' == membership operator ==')
