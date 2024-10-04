@@ -1,3 +1,4 @@
+from copy import copy, deepcopy
 from pprint import pprint
 
 black_box = {
@@ -11,9 +12,10 @@ black_box = {
 }
 
 
-black_box['7'][2][2]['a'] = 'c'
-black_box['4'].remove(5)
+print(id(5 / 3))
+print(id(5 / 3))
 
 
-pprint(black_box)
+
+
 

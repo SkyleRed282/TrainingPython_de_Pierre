@@ -49,6 +49,8 @@ print('\n\nLoop in loop')
 for letter1 in 'abc':  # ['a','b','c']
     for letter2 in 'zxy':  # ['z','y','x']
         print(letter1, letter2, sep='/', end=' ')
+        if letter2 == 'x':
+            break
 
 print('\n\nZip')
 

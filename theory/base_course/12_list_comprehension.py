@@ -14,3 +14,5 @@ print(number_list_5)
 
 alphabet_dict = {letter: counter for counter, letter in enumerate(alphabet[:3])}
 print(alphabet_dict)
+
+

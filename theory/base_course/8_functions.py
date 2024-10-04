@@ -23,6 +23,7 @@ def get_random_number_0_x(x: int) -> int:
     return random.randint(0, x)
 
 
+
 def get_random_number_0_9() -> int:
     """
     This function return a random number in range [0,10]

@@ -11,7 +11,6 @@ print(my_str[::-1])
 
 # String methods
 print(my_str.replace('python', 'java'))
-print(my_str.index('python'))
 print(my_str.split())
 print('a,b,c,d'.split(','))
 

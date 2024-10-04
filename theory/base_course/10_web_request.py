@@ -1,9 +1,19 @@
+from pprint import pprint
 
 import requests
+import pandas as pd
 
-response = requests.get('https://type.fit/api/quotes')
-data = response.json()
+# Get => Like Browser / read object
+# Post => Form / create object
+# Delete => delete object
+# Put => update object
 
-print(type(data), type(data[0]))
-print(data[0])
+# response = requests.get('https://de.wikipedia.org/wiki/Python_(Programmiersprache)')
+# data = response.text
+
+results = pd.read_html('https://de.wikipedia.org/wiki/Python_(Programmiersprache)')
+for result in results:
+    for index, line in result.iterrows():
+        print(line)
+
 
