@@ -1,5 +1,5 @@
-from bases.theory.classes.base.school.school import School
-from bases.theory.classes.base.school.student import Student
+from theory.oop.base.school.school import School
+from theory.oop.base.school.student import Student
 
 if __name__ == '__main__':
     school_1 = School(name='Montreux school')

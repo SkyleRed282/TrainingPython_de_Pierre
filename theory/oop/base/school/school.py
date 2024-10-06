@@ -1,5 +1,5 @@
-from bases.theory.classes.base.school.ClassRoom import ClassRoom
-from bases.theory.classes.base.school.student import Student
+from theory.oop.base.school.class_room import ClassRoom
+from theory.oop.base.school.student import Student
 
 
 class School:
