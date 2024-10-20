@@ -1,66 +1,47 @@
+from random import randint
+
+from match_point import MatchPoint
+
+
 class MatchSet:
 
     def __init__(self):
-        self.score_player_a = 0
-        self.score_player_b = 0
-        self.advantage = ''  # a / b
-        self.winner = ''  # a / b
+        self.points = []
 
-    def score_point(self, player: str):
+    # 6 with 2 difference
+    def set_winner(self):
 
-        # If the scored is player a
-        if player == 'A':
-            self.score_player_a += 15
+        points = self.get_points()
 
-            # If score already max
-            if self.score_player_a > 45:
+        # At least a player has 6 points?
+        if points[0] >= 6 or points[1] >= 6:
+            # Is there at least a difference from 2?
+            if abs(points[0] - points[1]) > 1:
+                return 'A' if points[0] > points[1] else 'B'
 
-                # If player a has advantage => Won
-                if self.advantage == 'A':
-                    self.winner = 'A'
-                # If the oter play had advantage => deuce
-                elif self.advantage == 'B':
-                    self.advantage = ''
-
-                # Advantage to player A
-                else:
-                    self.advantage = 'A'
-
-                self.score_player_a = 45
-
-        else:
-            self.score_player_b += 15
-
-            # If score already max
-            if self.score_player_b > 45:
-
-                # If player a has advantage => Won
-                if self.advantage == 'B':
-                    self.winner = 'B'
-                # If the oter play had advantage => deuce
-                elif self.advantage == 'A':
-                    self.advantage = ''
-
-                # Advantage to player b
-                else:
-                    self.advantage = 'B'
-
-                self.score_player_b = 45
-
-    # If winner? => 'Won by player X' / Else: 'A:pts - B:pts'
-    def __str__(self):
-        if self.winner:
-            return f'Won by player {self.winner}'
-        else:
-
-            result = f'A:{self.score_player_a}'
-            if self.advantage == 'A':
-                result += ' [ADV]'
-            result += f' - B:{self.score_player_b}'
-            if self.advantage == 'B':
-                result += ' [ADV]'
-
-            return result
+    def get_points(self) -> list[int]:
+        # Sum points by player
+        points = [0, 0]  # A - B
+        for point in self.points:
+            if point.winner == 'A':
+                points[0] += 1
+            else:
+                points[1] += 1
+        return points
 
     def is_finished(self):
-        return bool(self.winner)
+        return bool(self.set_winner())
+
+    def play_set(self):
+
+        # Until the set is finished we play points
+        while not self.is_finished():
+            match_point = MatchPoint()
+            match_point.play_point()
+            self.points.append(match_point)
+        print(self)
+
+    def __str__(self):
+        # Set result: [A:3, B:6]
+        points = self.get_points()
+        return f'Set result: [A:{points[0]}, B:{points[1]}]'
