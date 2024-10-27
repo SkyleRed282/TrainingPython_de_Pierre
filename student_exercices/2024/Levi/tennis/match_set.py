@@ -1,15 +1,17 @@
-from random import randint
+from player import Player
 
 from match_point import MatchPoint
 
 
 class MatchSet:
 
-    def __init__(self):
-        self.points = []
+    def __init__(self, player_a: Player, player_b: Player):
+        self.match_points = []
+        self.player_a = player_a
+        self.player_b = player_b
 
     # 6 with 2 difference
-    def set_winner(self):
+    def get_set_winner(self):
 
         points = self.get_points()
 
@@ -22,7 +24,7 @@ class MatchSet:
     def get_points(self) -> list[int]:
         # Sum points by player
         points = [0, 0]  # A - B
-        for point in self.points:
+        for point in self.match_points:
             if point.winner == 'A':
                 points[0] += 1
             else:
@@ -30,7 +32,7 @@ class MatchSet:
         return points
 
     def is_finished(self):
-        return bool(self.set_winner())
+        return bool(self.get_set_winner())
 
     def play_set(self):
 
@@ -38,8 +40,7 @@ class MatchSet:
         while not self.is_finished():
             match_point = MatchPoint()
             match_point.play_point()
-            self.points.append(match_point)
-        print(self)
+            self.match_points.append(match_point)
 
     def __str__(self):
         # Set result: [A:3, B:6]

@@ -1,10 +1,12 @@
-
-from match_set import MatchSet
+from match import Match
+from player import Player
 
 if __name__ == '__main__':
-
     # ball - rackets - net - field - spieler - referee - ball boy - match - set
 
-    set_1 = MatchSet()
-    set_1.play_set()
+    roger = Player(name='Roger Federer')
+    messi = Player(name='Lionel Messi', serving_skill=0.7)
 
+    match = Match(player_a=roger, player_b=messi)
+    match.play_match()
+    print(match)

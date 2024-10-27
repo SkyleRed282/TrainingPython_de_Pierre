@@ -84,4 +84,3 @@ class MatchPoint:
             player_points = randint(0, 1)
             player_name = ('A', 'B')[player_points]
             self.score_point(player_name)
-            print(self)
