@@ -1,4 +1,4 @@
-from match_set import MatchSet
+
 from player import Player
 
 
@@ -10,23 +10,26 @@ class Match:
         self.player_b = player_b
 
     def play_match(self):
+
+        from match_set import MatchSet
+
         """
         Play 2 or 3 sets depending on the results and display the final score
         """
 
         # Set 1
-        set_1 = MatchSet(player_a=self.player_a, player_b=self.player_b)
+        set_1 = MatchSet(match=self)
         self.match_sets.append(set_1)
         set_1.play_set()
 
         # Set 2
-        set_2 = MatchSet(player_a=self.player_a, player_b=self.player_b)
+        set_2 = MatchSet(match=self)
         self.match_sets.append(set_2)
         set_2.play_set()
 
         # Set 3 if ex-eqo
         if set_1.get_set_winner() != set_2.get_set_winner():
-            set_3 = MatchSet(player_a=self.player_a, player_b=self.player_b)
+            set_3 = MatchSet(match=self)
             self.match_sets.append(set_3)
             set_3.play_set()
 

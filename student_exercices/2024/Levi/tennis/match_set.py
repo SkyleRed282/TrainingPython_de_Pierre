@@ -1,17 +1,16 @@
-from player import Player
 
+from match import Match
 from match_point import MatchPoint
 
 
 class MatchSet:
 
-    def __init__(self, player_a: Player, player_b: Player):
+    def __init__(self, match: Match):
         self.match_points = []
-        self.player_a = player_a
-        self.player_b = player_b
+        self.match = match
 
     # 6 with 2 difference
-    def get_set_winner(self):
+    def get_set_winner(self) -> str:
 
         points = self.get_points()
 

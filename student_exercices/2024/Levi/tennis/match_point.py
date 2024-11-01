@@ -1,13 +1,15 @@
 from random import randint
+from match_set import MatchSet
 
 
 class MatchPoint:
 
-    def __init__(self):
+    def __init__(self, match_set: MatchSet):
         self.score_player_a = 0
         self.score_player_b = 0
-        self.advantage = ''  # a / b
-        self.winner = ''  # a / b
+        self.advantage = ''  # A / B
+        self.winner = ''  # A / B
+        self.match_set = match_set
 
     def score_point(self, player: str):
 
