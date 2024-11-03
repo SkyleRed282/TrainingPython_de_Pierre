@@ -1,6 +1,4 @@
-
 from match import Match
-from match_point import MatchPoint
 
 
 class MatchSet:
@@ -35,9 +33,11 @@ class MatchSet:
 
     def play_set(self):
 
+        from match_point import MatchPoint
+
         # Until the set is finished we play points
         while not self.is_finished():
-            match_point = MatchPoint()
+            match_point = MatchPoint(self)
             match_point.play_point()
             self.match_points.append(match_point)
 

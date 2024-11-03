@@ -3,6 +3,7 @@ from match_set import MatchSet
 
 
 class MatchPoint:
+    point_id = 0
 
     def __init__(self, match_set: MatchSet):
         self.score_player_a = 0
@@ -10,6 +11,13 @@ class MatchPoint:
         self.advantage = ''  # A / B
         self.winner = ''  # A / B
         self.match_set = match_set
+
+        MatchPoint.point_id += 1
+
+        if MatchPoint.point_id != 1:
+            self.match_set.match.toggle_serving_player()
+
+        print(f'New match point, server: {self.match_set.match.serving_player.name}')
 
     def score_point(self, player: str):
 
@@ -83,6 +91,5 @@ class MatchPoint:
     def play_point(self):
 
         while not self.is_finished():
-            player_points = randint(0, 1)
-            player_name = ('A', 'B')[player_points]
+            player_name = ('A', 'B')[randint(0, 1)]
             self.score_point(player_name)

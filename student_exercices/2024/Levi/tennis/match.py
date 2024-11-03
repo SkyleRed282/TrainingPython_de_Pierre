@@ -1,4 +1,4 @@
-
+from random import randint
 from player import Player
 
 
@@ -8,6 +8,16 @@ class Match:
         self.match_sets = []
         self.player_a = player_a
         self.player_b = player_b
+
+        print(f'Match starting between : {self.player_a.name} and {self.player_b.name}.')
+
+        self.serving_player = (player_a, player_b)[randint(0, 1)]
+        print(f'{self.serving_player.name} will start serving.')
+
+    def toggle_serving_player(self):
+        # <some_variable> = <value if true> if <condition> else <value if false>
+        self.serving_player = self.player_b if self.serving_player == self.player_a else self.player_a
+
 
     def play_match(self):
 
@@ -35,20 +45,20 @@ class Match:
 
     def get_result(self):
         results = []
-        for match_set in self.match_sets:
-            results.append(match_set.get_set_winner())
 
-        if results.count('A') == 2:
-            winner = 'A'
-        else:
-            winner = 'B'
+        sum_points_a, sum_points_b = 0, 0
+        for match_set in self.match_sets:
+            player_a_points, player_b_points = match_set.get_points()  # [3,6]
+            results.append(f'{player_a_points}:{player_b_points}')
+            sum_points_a += player_a_points
+            sum_points_b += player_b_points
+
+        # Results [['3:6'],['2:6']]
+        winner = self.player_a if sum_points_a > sum_points_b else self.player_b
 
         return results, winner
 
-    def __str__(self):
-        """
-        Winner player A/B - Sets[A,B,A]
-        """
-        results, winner = self.get_result()
+    def print_result(self):
 
-        return f"Winner {winner} - Sets {results}"
+        results, winner = self.get_result()
+        print(f"Winner: {winner.name} - Sets {results}")

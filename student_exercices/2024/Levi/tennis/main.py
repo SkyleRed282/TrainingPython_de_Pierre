@@ -9,4 +9,4 @@ if __name__ == '__main__':
 
     match = Match(player_a=roger, player_b=messi)
     match.play_match()
-    print(match)
+    match.print_result()
