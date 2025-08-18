@@ -29,6 +29,10 @@ WHERE age > 10
 LIMIT 10;
 '''
 
+my_multiline_string2 = \
+    'abcdefabcdefabcdef'\
+    'abcdefabcdefabcdefabcdef'
+
 my_int = 1_000_000
 print(my_int)
 
@@ -80,7 +84,7 @@ print(my_set)
 print(list(set([1, 1, 2, 3, 4])))
 
 print(' === range === ')
-my_range = range(1, 15, 2)  # [2, 4, 6, ..]
+my_range = range(1, 15, 2)  # [1, 3, 5, ..]
 print(list(my_range))
 
 print(' === dict === ')
