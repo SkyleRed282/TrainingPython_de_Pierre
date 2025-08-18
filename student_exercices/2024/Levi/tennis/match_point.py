@@ -70,26 +70,3 @@ class MatchPoint:
 
                 self.score_player_b = 45
 
-    # If winner? => 'Won by player X' / Else: 'A:pts - B:pts'
-    def __str__(self):
-        if self.winner:
-            return f'Point won by player {self.winner}'
-        else:
-
-            result = f'A:{self.score_player_a}'
-            if self.advantage == 'A':
-                result += ' [ADV]'
-            result += f' - B:{self.score_player_b}'
-            if self.advantage == 'B':
-                result += ' [ADV]'
-
-            return result
-
-    def is_finished(self):
-        return bool(self.winner)
-
-    def play_point(self):
-
-        while not self.is_finished():
-            player_name = ('A', 'B')[randint(0, 1)]
-            self.score_point(player_name)
