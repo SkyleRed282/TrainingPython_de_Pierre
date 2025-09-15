@@ -12,9 +12,9 @@ for index, letter in enumerate(alphabet[:3]):
 
 print('\n\nFor i')
 
-for letter_number in range(3):  # [0, 1, 2]
+for index_number in range(3):  # [0, 1, 2]
     # ['a','b', ...]
-    print(alphabet[letter_number], end=' ')
+    print(alphabet[index_number], end=' ')
 
 print('\n\nWhile')
 
