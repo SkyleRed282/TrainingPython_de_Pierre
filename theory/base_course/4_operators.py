@@ -1,3 +1,4 @@
+import random
 from pprint import pprint
 
 # arithmetics
@@ -7,8 +8,10 @@ print(5 % 2)
 
 # Ex of %: repartition of student in classrooms
 class_rooms = [[], [], [], [], []]
-for student_nbr in range(1, 22):
+for _ in range(1, 22):
+    student_nbr = random.randint(0,100)
     class_rooms[student_nbr % 5].append(student_nbr)
+
 pprint(class_rooms)
 print(5 // 2)
 
@@ -34,7 +37,8 @@ print(all([False, False, False, False, True]))
 # identity operators
 print(' == identity operators ==')
 print(type(IndexError) is LookupError)
-print(type('1') is str)
+print(isinstance(IndexError(), LookupError))
+print(type('1') is int)
 
 # membership operator
 print(' == membership operator ==')
