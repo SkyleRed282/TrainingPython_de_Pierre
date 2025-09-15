@@ -15,12 +15,5 @@ dogs_data = [
     }
 ]
 
-del dogs_data[0]['nourriture'][2]
-dogs_data[1]['is_male'] = False
-
-# reverse
-dogs_data[1]['nourriture'].append('cookie')
-
-del dogs_data[1]['nourriture']
-pprint(dogs_data)
-
+dogs_data[0]['nourriture'][1] = 'salade'
+print(dogs_data)
