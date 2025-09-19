@@ -22,7 +22,25 @@ while nombre_choisi != nombre_mystere:
     elif nombre_choisi > nombre_mystere:
         print('Le nombre mystère est plus petit')
 
-print('Bravo tu as trouvé le nombre mystère!')
+print('\nBravo tu as trouvé le nombre mystère!')
+
+# poser la question
+
+recommencer_une_partie = 0
+
+
+while recommencer_une_partie != 1 or 2:
+    # veut-il recommencer ?
+    réponse_par_oui_ou_non = input('\nVoulez-vous recommencer une partie ?\n(répondez par "oui" ou "non") :')
+
+    # il dis n'importe quoi
+
+
+    # il dis oui
+
+
+    # il dis non
+
 
 # Devoir: Après la victoire, demander à l'utilisateur, s'il veut jouer une nouvelle partie
 # 1) Boucle dans un boucle => input => test si input => Y or N => forcer Y ou N (répéter la question).
