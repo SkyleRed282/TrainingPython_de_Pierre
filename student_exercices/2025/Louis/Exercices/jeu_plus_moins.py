@@ -1,48 +1,71 @@
 # Choisir un nombre entre 1 et 100
 import random
+import time
 
-nombre_mystere = random.randint(1, 100)
+NOMBRE_MIN = 1
+NOMBRE_MAX = 100
+MAX_SECONDES = 20
 
-nombre_choisi = -1
+continuer_a_jouer = True
 
-# Tant qu'il n'a pas été deviné
-while nombre_choisi != nombre_mystere:
+while continuer_a_jouer:
 
-    # Demander un nombre
-    nombre_choisi_str = input('Entrer un nombre entre 1 et 100: ')
-    if not nombre_choisi_str.isdigit():
-        print(f'{nombre_choisi_str} n\'est pas un nombre valable.\n')
-        continue
+    nombre_mystere = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+    nombre_min_actuel = NOMBRE_MIN
+    nombre_max_actuel = NOMBRE_MAX
+    start_ts = time.time() # retourne le nombre de secondes écoulées depuis le January 1, 1970 à minuit
+    temps_restant = MAX_SECONDES
 
-    nombre_choisi = int(nombre_choisi_str)
+    nombre_choisi = -1
+    nb_vies = 7
 
-    # Dire si il est > ou <
-    if nombre_choisi < nombre_mystere:
-        print('Le nombre mystère est plus grand\n')
-    elif nombre_choisi > nombre_mystere:
-        print('Le nombre mystère est plus petit\n')
+    # Tant qu'il n'a pas été deviné et qu'il reste des vies
+    while nombre_choisi != nombre_mystere and nb_vies > 0 and temps_restant > 0:
 
-print('\nBravo tu as trouvé le nombre mystère!\n')
+        temps_restant = round(MAX_SECONDES - (time.time() - start_ts), 1)
 
-# poser la question
+        # Demander un nombre
+        nombre_choisi_str = input(
+            f'{nb_vies}❤️ {temps_restant}⏲️ | Entrer un nombre entre {nombre_min_actuel} et {nombre_max_actuel}: ')
 
-recommencer_une_partie = 0
+        # Le text contient un nombre valide?
+        if not nombre_choisi_str.isdigit():
+            print(f'{nombre_choisi_str} n\'est pas un nombre valable.\n')
+            continue
 
+        nombre_choisi = int(nombre_choisi_str)
 
-while recommencer_une_partie != "oui" or "non":
+        # Est-ce que le nonbre est dans la plage demandée?
+        if not nombre_min_actuel <= nombre_choisi <= nombre_max_actuel:
+            print(f'{nombre_choisi} n\'est pas dans entre {nombre_min_actuel} et {nombre_max_actuel}.\n')
+            continue
+
+        # Dire si il est > ou <
+        if nombre_choisi < nombre_mystere:
+            nombre_min_actuel = nombre_choisi + 1
+            print('Le nombre mystère est plus grand\n')
+            nb_vies -= 1
+
+        elif nombre_choisi > nombre_mystere:
+            nombre_max_actuel = nombre_choisi - 1
+            print('Le nombre mystère est plus petit\n')
+            nb_vies -= 1
+
+    # Gagné ou perdu?
+    if nb_vies and temps_restant >0:
+        print('\nBravo tu as trouvé le nombre mystère!\n')
+    else:
+        print(f'\nPerdu! {nb_vies}❤️ {temps_restant}⏲️\n')
+
     # veut-il recommencer ?
-    reponse_par_oui_ou_non = input('Voulez-vous recommencer une partie ?\n(répondez par "oui" ou "non" lettre pour lettre) : ')
-# Demander "oui" ou "non"
-    if reponse_par_oui_ou_non != "oui" or "non":
-        print(f'\n{reponse_par_oui_ou_non} n\'est pas lettre pour lettre "oui" ou "non" !\nveuillez recommencer\n')
-        continue
+    reponse_par_oui_ou_non = None
+    while reponse_par_oui_ou_non not in ("oui", "non"):
+        reponse_par_oui_ou_non = input('Voulez-vous recommencer une partie ?\n("oui"/"non" ): ')
 
-    reponse_par_oui_ou_non = str(reponse_par_oui_ou_non_str)
-    # il dis oui
+    if reponse_par_oui_ou_non != "oui":
+        break
 
+print('\nAu revoir!')
 
-    # il dis non
-
-
-# Devoir: Après la victoire, demander à l'utilisateur, s'il veut jouer une nouvelle partie
-# 1) Boucle dans un boucle => input => test si input => Y or N => forcer Y ou N (répéter la question).
+# Devoir: du 24.09.2025 => Ajouter une selection de la difficulté => varier le temps,le nombre de vies, la plage de recherche (facile - normale - difficile)
+# Une seule fois par session de jeu
