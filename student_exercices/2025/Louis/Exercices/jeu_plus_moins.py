@@ -2,10 +2,13 @@
 import random
 import time
 
+# l'utilisateur choisi la difficulté
 
 difficulte_choisi = None
 while difficulte_choisi not in ("facile", "moyenne", "difficile"):
     difficulte_choisi = input('En quelle difficulté voulez-vous jouer ?\n\n(Ceci est la difficulté de la session,\n il ne cera pas possible de modiffier\n la difficulté en cours de session !)\n\n("facile"/"moyenne"/"difficile"): ')
+
+    # le paramètre lier à la difficulté selectionné est selectionner
 
     if difficulte_choisi not in ("facile", "moyenne", "difficile"):
         print(f'{difficulte_choisi} n\'est pas une difficulté valable.\n')
@@ -13,17 +16,24 @@ while difficulte_choisi not in ("facile", "moyenne", "difficile"):
     if difficulte_choisi == "facile":
         MAX_SECONDES_SELECT = 35
         nb_vies_select = 9
+        NOMBRE_MIN_SELECT = 1
+        NOMBRE_MAX_SELECT = 100
     elif difficulte_choisi == "moyenne":
         MAX_SECONDES_SELECT = 25
         nb_vies_select = 7
+        NOMBRE_MIN_SELECT = 1
+        NOMBRE_MAX_SELECT = 100
     else:
-        MAX_SECONDES_SELECT = 20
-        nb_vies_select = 5
+        MAX_SECONDES_SELECT = 25
+        nb_vies_select = 6
+        NOMBRE_MIN_SELECT = 1
+        NOMBRE_MAX_SELECT = 150
 
 
 
-NOMBRE_MIN = 1
-NOMBRE_MAX = 100
+
+NOMBRE_MIN = NOMBRE_MIN_SELECT
+NOMBRE_MAX = NOMBRE_MAX_SELECT
 MAX_SECONDES = MAX_SECONDES_SELECT
 
 continuer_a_jouer = True
@@ -57,7 +67,7 @@ while continuer_a_jouer:
 
         # Est-ce que le nonbre est dans la plage demandée?
         if not nombre_min_actuel <= nombre_choisi <= nombre_max_actuel:
-            print(f'{nombre_choisi} n\'est pas dans entre {nombre_min_actuel} et {nombre_max_actuel}.\n')
+            print(f'{nombre_choisi} n\'est pas entre {nombre_min_actuel} et {nombre_max_actuel}.\n')
             continue
 
         # Dire si il est > ou <
