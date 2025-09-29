@@ -2,9 +2,29 @@
 import random
 import time
 
+
+difficulte_choisi = None
+while difficulte_choisi not in ("facile", "moyenne", "difficile"):
+    difficulte_choisi = input('En quelle difficulté voulez-vous jouer ?\n\n(Ceci est la difficulté de la session,\n il ne cera pas possible de modiffier\n la difficulté en cours de session !)\n\n("facile"/"moyenne"/"difficile"): ')
+
+    if difficulte_choisi not in ("facile", "moyenne", "difficile"):
+        print(f'{difficulte_choisi} n\'est pas une difficulté valable.\n')
+        continue
+    if difficulte_choisi == "facile":
+        MAX_SECONDES_SELECT = 35
+        nb_vies_select = 9
+    elif difficulte_choisi == "moyenne":
+        MAX_SECONDES_SELECT = 25
+        nb_vies_select = 7
+    else:
+        MAX_SECONDES_SELECT = 20
+        nb_vies_select = 5
+
+
+
 NOMBRE_MIN = 1
 NOMBRE_MAX = 100
-MAX_SECONDES = 20
+MAX_SECONDES = MAX_SECONDES_SELECT
 
 continuer_a_jouer = True
 
@@ -17,7 +37,7 @@ while continuer_a_jouer:
     temps_restant = MAX_SECONDES
 
     nombre_choisi = -1
-    nb_vies = 7
+    nb_vies = nb_vies_select
 
     # Tant qu'il n'a pas été deviné et qu'il reste des vies
     while nombre_choisi != nombre_mystere and nb_vies > 0 and temps_restant > 0:
