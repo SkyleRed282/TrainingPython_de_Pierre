@@ -3,38 +3,31 @@ import random
 import time
 
 # l'utilisateur choisi la difficulté
-
 difficulte_choisi = None
 while difficulte_choisi not in ("facile", "moyenne", "difficile"):
     difficulte_choisi = input('En quelle difficulté voulez-vous jouer ?\n\n(Ceci est la difficulté de la session,\n il ne cera pas possible de modiffier\n la difficulté en cours de session !)\n\n("facile"/"moyenne"/"difficile"): ')
 
     # le paramètre lier à la difficulté selectionné est selectionner
-
     if difficulte_choisi not in ("facile", "moyenne", "difficile"):
         print(f'{difficulte_choisi} n\'est pas une difficulté valable.\n')
-        continue
-    if difficulte_choisi == "facile":
-        MAX_SECONDES_SELECT = 35
-        nb_vies_select = 9
-        NOMBRE_MIN_SELECT = 1
-        NOMBRE_MAX_SELECT = 100
-    elif difficulte_choisi == "moyenne":
-        MAX_SECONDES_SELECT = 25
-        nb_vies_select = 7
-        NOMBRE_MIN_SELECT = 1
-        NOMBRE_MAX_SELECT = 100
-    else:
-        MAX_SECONDES_SELECT = 25
-        nb_vies_select = 6
-        NOMBRE_MIN_SELECT = 1
-        NOMBRE_MAX_SELECT = 150
+
+if difficulte_choisi == "facile":
+    max_secondes_choisi = 35
+    nb_vies_select = 9
+    nombre_max_choisi = 100
+elif difficulte_choisi == "moyenne":
+    max_secondes_choisi = 25
+    nb_vies_select = 7
+    nombre_max_choisi = 100
+else:
+    max_secondes_choisi = 25
+    nb_vies_select = 6
+    nombre_max_choisi = 150
 
 
-
-
-NOMBRE_MIN = NOMBRE_MIN_SELECT
-NOMBRE_MAX = NOMBRE_MAX_SELECT
-MAX_SECONDES = MAX_SECONDES_SELECT
+NOMBRE_MIN = 1
+NOMBRE_MAX = nombre_max_choisi
+MAX_SECONDES = max_secondes_choisi
 
 continuer_a_jouer = True
 
@@ -96,6 +89,3 @@ while continuer_a_jouer:
         break
 
 print('\nAu revoir!')
-
-# Devoir: du 24.09.2025 => Ajouter une selection de la difficulté => varier le temps,le nombre de vies, la plage de recherche (facile - normale - difficile)
-# Une seule fois par session de jeu
