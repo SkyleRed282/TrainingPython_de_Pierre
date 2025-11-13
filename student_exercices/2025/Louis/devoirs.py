@@ -53,5 +53,4 @@ while True:
         break
 
 
-
 print(counter)
