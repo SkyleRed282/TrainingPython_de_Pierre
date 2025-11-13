@@ -10,8 +10,8 @@ if __name__ == '__main__':
         if not os.path.exists(f'calendar/{month_number}'):
             os.mkdir(path=f'calendar/{month_number}')
 
-        for day_number in range(1, 31):
-            with open(f'calendar/{month_number}/{day_number}.txt', 'w'):
+        for week_number in range(1, 5):
+            with open(f'calendar/{month_number}/{week_number}.txt', 'w'):
                 pass
 
     for root, dirs, files in os.walk("calendar", topdown=True):
