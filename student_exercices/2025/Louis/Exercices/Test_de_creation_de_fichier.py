@@ -14,16 +14,24 @@ while avoir_les_noms_ou_pas not in ("oui", "non") :
 # 2) exécuter la suite du script selon le choix de l'utilisateur
 
 if avoir_les_noms_ou_pas == "oui" :
-# donner le nom de chaque moment de la journée
+    # donner le nom de chaque moment de la journée
 
     if not os.path.exists('Journée'):
         os.mkdir(path='Journée')
 
-    for hours_time in range(1, 25):
+    for hours_time in range(0, 24):
         if not os.path.exists(f'Journée/{hours_time}'):
             os.mkdir(path=f'Journée/{hours_time}')
-    for morning_hours in range(2, 12):
+    for morning_hours in range(0, 12):
         with open(f'journée/{morning_hours}/Morning.txt', 'w'):
+            pass
+    with open('journée/12/lunch.txt', 'w'):
+        pass
+    for afternoon_hours in range(13, 18):
+        with open(f'journée/{afternoon_hours}/Afternoon.txt', 'w'):
+            pass
+    for evening_hours in range(18, 24):
+        with open(f'journée/{evening_hours}/evening.txt', 'w'):
             pass
 else:
 # demander à l'utilisateur s'il veut clean les fichiers et arrêter le script ou simplement arrêter le script
@@ -37,9 +45,9 @@ else:
 
     if clean_les_files_ou_arreter_le_script == "nettoyer et arrêter":
         if os.path.exists('Journée'):
-            for hours_time in range(1, 25):
+            for hours_time in range(0, 24):
                 os.rmdir(path=f'Journée/{hours_time}')
-                os.rmdir(path='journée')
+            os.rmdir(path='journée')
         else:
             print("il a aucun fichier à nettoyer")
 
