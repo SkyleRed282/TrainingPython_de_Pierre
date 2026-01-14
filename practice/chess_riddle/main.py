@@ -16,7 +16,7 @@ winning_board = (
 )
 
 
-def get_board_code(current_board):
+def get_board_code(current_board) -> str:
     code = ''
     for line in current_board:
         for value in line:
@@ -38,6 +38,7 @@ def get_knight_positions(current_board):
 
 def get_possible_moves(current_board):
     knights_moves = []
+
     for knight in get_knight_positions(current_board):
         knight_x, knight_y, color = knight
         all_moves = [
@@ -79,6 +80,7 @@ def get_same_tested_position(code, positions):
 
 
 def explore_positions_recursive(current_board: tuple, tested_positions: [], moves_done: tuple, winning_branches: [], level):
+
     print(f'Current board, level: {level}')
     board_code = get_board_code(current_board)
     print_board(current_board)

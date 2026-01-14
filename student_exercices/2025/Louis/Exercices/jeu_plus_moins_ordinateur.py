@@ -18,7 +18,7 @@ if __name__ == '__main__':
     import random
 
     # L'utilisateur choisi un nombre dans sa tête
-    input('Utilisateur: Pense à un nombre entre 1 et 100 et appuie sur ENTER pour démarer la partie.')
+    input('Utilisateur: Pense à un nombre entre 1 et 100 et appuie sur ENTER pour démarrer la partie.')
 
     feedback = ''
     nb_min, nb_max = 1, 100
