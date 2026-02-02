@@ -47,7 +47,7 @@ def compter_voyelles(texte):
 # Valider que le premier paramètre est bien un dictionnaire.
 def obtenir_valeur(dico, cle):
     if type(dico) is not dict:
-        return
+        return "Clé absente"
 
     if cle not in dico:
         return "Clé absente"
@@ -58,8 +58,16 @@ def obtenir_valeur(dico, cle):
 # Elle doit retourner True si l'âge est >= 18, False sinon.
 # Si l'âge est négatif ou n'est pas un nombre, retourner None.
 def est_majeur(age):
-    pass
+    if type(age) is not int:
+        return None
 
+    if age < 0:
+        return None
+
+    if age > 18:
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     # Tests pour l'exercice 1
