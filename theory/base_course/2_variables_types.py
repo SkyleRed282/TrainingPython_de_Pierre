@@ -29,8 +29,7 @@ WHERE age > 10
 LIMIT 10;
 '''
 
-my_multiline_string2 = \
-    'abcdefabcdefabcdef'\
+my_multiline_string2 = 'abcdefabcdefabcdef'\
     'abcdefabcdefabcdefabcdef'
 
 my_int = 1_000_000
