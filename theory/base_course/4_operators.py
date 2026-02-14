@@ -4,16 +4,18 @@ from pprint import pprint
 # arithmetics
 print(' == arithmetic ==')
 print(1 * 2 / 2 - 3 + 5)
-print(5 % 2)
+
+print(5 % 2) # Module
+print(5 // 2) # Whole division
 
 # Ex of %: repartition of student in classrooms
 class_rooms = [[], [], [], [], []]
 for _ in range(1, 22):
-    student_nbr = random.randint(0,100)
+    student_nbr = random.randint(0, 100)
     class_rooms[student_nbr % 5].append(student_nbr)
 
 pprint(class_rooms)
-print(5 // 2)
+
 
 # assignment
 var1 = 1
@@ -45,4 +47,4 @@ print(' == membership operator ==')
 print('x' in 'axc')
 print('x' in ['a', 'x', 'c'])
 print('axc' in ['a', 'x', 'c'])
-print(['a', 'x'] in ['a', 'x', 'c'])
+print(['a', 'x'] in ['a', 'x', 'c', ])
