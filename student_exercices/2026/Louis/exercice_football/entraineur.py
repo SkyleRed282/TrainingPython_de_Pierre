@@ -1,10 +1,11 @@
 from personne import Personne
 
-class Entraineur:
+class Entraineur(Personne):
     def __init__(self, nom, age, diplome):
         # Point : Cette classe servait d'exemple, mais pour l'exercice
         # l'élève doit maintenant l'implémenter lui-même ou elle doit échouer au test d'héritage
-        pass
+        super().__init__(self, nom, age)
+        self.diplome = diplome
 
     def __str__(self):
-        return ""
+        return f"Entraineur {self.nom} ({self.age} ans) - {self.diplome}"
