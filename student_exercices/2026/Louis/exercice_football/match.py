@@ -1,5 +1,6 @@
 from arbitre import Arbitre
 
+
 class Match:
     def __init__(self, equipe_domicile, equipe_exterieur, arbitre):
         self.equipe_domicile = equipe_domicile
@@ -10,8 +11,10 @@ class Match:
 
     def marquer_but(self, est_domicile):
         # Point 6 : Incrémenter le score (domicile ou extérieur)
-        pass
-
+        if est_domicile:
+            self.score = (self.score[0]+1, self.score[1])
+        else:
+            self.score = (self.score[0], self.score[1]+1)
 
     @staticmethod
     def duree_reglementaire():

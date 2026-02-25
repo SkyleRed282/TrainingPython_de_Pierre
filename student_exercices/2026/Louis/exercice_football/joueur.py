@@ -1,4 +1,4 @@
-from typing_extensions import overload
+from typing import override
 
 from personne import Personne
 
@@ -7,11 +7,11 @@ class Joueur(Personne):
 
     def __init__(self, nom, age, poste, numero):
         # Point 3 : Appeler le constructeur parent et initialiser poste et numero
-        super().__init__(self, nom, age)
+        super().__init__(nom, age)
         self.poste = poste
         self.numero = numero
 
-    @overload
+    @override
     def __str__(self):
         # Point 3 : Surcharger pour afficher "Joueur [numero]: [nom] ([age] ans) - [poste]"
         # Indice : Utilisez super().__str__() pour la partie nom/age
