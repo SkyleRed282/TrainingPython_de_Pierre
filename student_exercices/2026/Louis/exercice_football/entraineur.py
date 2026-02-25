@@ -1,3 +1,5 @@
+from typing import overload
+
 from personne import Personne
 
 class Entraineur(Personne):
@@ -7,5 +9,6 @@ class Entraineur(Personne):
         super().__init__(self, nom, age)
         self.diplome = diplome
 
+    @overload
     def __str__(self):
         return f"Entraineur {self.nom} ({self.age} ans) - {self.diplome}"
