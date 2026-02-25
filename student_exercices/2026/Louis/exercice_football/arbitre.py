@@ -1,10 +1,15 @@
+from typing_extensions import overload
+
 from personne import Personne
 
-class Arbitre:
+class Arbitre(Personne):
+
     def __init__(self, nom, age, experience):
         # Point 4 : Appeler le constructeur parent et initialiser experience
-        pass
+        super().__init__(self, nom, age)
+        self.experience = experience
 
+    @overload
     def __str__(self):
         # Point 4 : Surcharger pour afficher "Arbitre [nom] ([age] ans) ([experience] ans d'XP)"
-        return ""
+        return f"Arbitre {self.nom} ({self.age} ans) ({self.experience} ans d'XP)"

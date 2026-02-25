@@ -6,4 +6,4 @@ class Stade:
 
     def __str__(self):
         # Point 8 : Retourner "[nom] à [ville] ([capacite] places)"
-        return ""
+        return f"{self.nom} à {self.ville} ({self.capacite} places)"

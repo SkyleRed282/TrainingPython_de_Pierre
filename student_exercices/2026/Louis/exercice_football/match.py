@@ -12,10 +12,11 @@ class Match:
         # Point 6 : Incrémenter le score (domicile ou extérieur)
         pass
 
+
     @staticmethod
     def duree_reglementaire():
         # Point 7 : Retourner 90
-        return 0
+        return 90
 
     def __str__(self):
         status = "Terminé" if self.termine else "En cours"
