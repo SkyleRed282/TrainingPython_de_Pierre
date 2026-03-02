@@ -5,75 +5,74 @@ Vervollständigen Sie die Variablen 'antwort1' bis 'antwort10'.
 """
 
 # 1. Wie oft wird "Hallo" gedruckt?
-# for i in range(5):
+# for i in range(5):  Range => [0, 1, 2, 3, 4]
 #     print("Hallo")
-antwort1 = None
+antwort1 = 5
 
 # 2. Welchen Wert hat 'summe' am Ende?
 summe = 0
 for zahl in [1, 2, 3, 4]:
-    summe += zahl
+    summe += zahl  # summe = summe + zahl
 # antwort2 = 
-antwort2 = None
+antwort2 = 10
 
 # 3. Was ist der letzte Wert von 'i', der gedruckt wird?
 # i = 0
 # while i < 10:
 #     i += 3
 #     print(i)
-antwort3 = None
+antwort3 = 12
 
 # 4. Welchen Wert hat 'index' beim Buchstaben 'c'?
 # alphabet = "abcde"
 # for index, buchstabe in enumerate(alphabet):
 #     if buchstabe == 'c':
 #         break
-antwort4 = None
+antwort4 = 2
 
 # 5. Was wird in dieser Schleife übersprungen (continue)?
 # ergebnis = []
 # for x in range(5):
-#     if x % 2 == 0:
+#     if x % 2 == 0:  => 1 // 2 => 0, rest (module) = 1
 #         continue
 #     ergebnis.append(x)
 # Welchen Wert hat 'ergebnis' am Ende?
-antwort5 = None
+antwort5 = [1, 3]
 
 # 6. Was ist das Ergebnis dieser verschachtelten Schleife?
-# count = 0
-# for i in range(2):
-#     for j in range(3):
-#         count += 1
-antwort6 = None
+count = 0
+for _ in range(2):  # => [0,1]
+    for _ in range(3):  # => [0,1, 2]
+        count += 1
+antwort6 = 6
 
 # 7. Welchen Wert hat 'paare' am Ende?
 # liste1 = [1, 2]
 # liste2 = ['a', 'b']
 # paare = list(zip(liste1, liste2))
-antwort7 = None
+antwort7 = [(1, 'a'), (2, 'b')]
 
 # 8. Was passiert, wenn die Schleife NICHT durch 'break' unterbrochen wird?
-# text = ""
-# for n in range(3):
-#     if n > 5:
-#         break
-# else:
-#     text = "Fertig"
+text = ""
+for n in range(3):
+    if n > 5:
+        break
+else:
+    text = "Fertig"
 # Welchen Wert hat 'text' am Ende?
-antwort8 = None
+antwort8 = "Fertig"
 
-# 9. Wie viele Elemente hat range(2, 10, 2)?
+# 9. Wie viele Elemente hat range(2, 10, 2)? [2, 4, 6, 8]
 # (Geben Sie die Anzahl als Ganzzahl an)
-antwort9 = None
+antwort9 = 4
 
 # 10. Was ist der Wert von 's' am Ende?
-# s = ""
-# for char in "Python":
-#     if char == "h":
-#         break
-#     s += char
-antwort10 = None
-
+s = ""
+for char in "Python":
+    if char == "h":
+        break
+    s += char
+antwort10 = 'Pyt'
 
 # --- TESTS ---
 # Diese Sektion nicht ändern! Sie dient zur Überprüfung Ihrer Antworten.
