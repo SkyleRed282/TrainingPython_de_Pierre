@@ -7,18 +7,18 @@ en suivant les étapes ci-dessous.
 
 ÉTAPES DE L'EXERCICE :
 1.  Fenêtre principale (MainWindow) : Configurez le titre ('Gestion de Footballeurs'),
-    la géométrie ('500x400') et lancez la mainloop dans run().
-    -> Test : Lancez main.py, une fenêtre vide de 500x400 doit apparaître.
+    la géométrie ('500x500') et lancez la mainloop dans run().
+    -> Test : Lancez main.py, une fenêtre vide de 500x500 doit apparaître.
 
-2.  Saisie du nom (MainWindow) : Dans __init__, créez un Frame, un Label ('Nom du footballeur :')
-    et un Entry. Utilisez pack() pour les afficher.
+2.  Saisie du nom (InputFrame) : Dans InputFrame, ajoutez un Label ('Nom du footballeur :')
+    et un Entry. Utilisez pack() pour les afficher. Instanciez InputFrame dans MainWindow.
     -> Test : Un champ de texte avec une étiquette doit être visible en haut.
 
-3.  Conteneur d'équipes (MainWindow) : Créez un Frame appelé teams_frame et affichez-le avec pack().
-    -> Test : Pas de changement visuel immédiat, mais nécessaire pour la suite.
+3.  Conteneur d'équipes (MainWindow) : Instanciez TeamFrame dans MainWindow et affichez-le avec pack().
+    -> Test : Pas de changement visuel immédiat, mais prépare l'affichage des colonnes.
 
 4.  Structure TeamTextArea (TeamTextArea) : Créez un Frame (self.frame) dans le master.
-    -> Test : Importez et testez l'instanciation (interne).
+    -> Test : Utilisé à l'étape 7.
 
 5.  Label d'équipe (TeamTextArea) : Ajoutez un Label à self.frame qui affiche label_text.
     -> Test : Le texte 'Equipe 1' ou 'Equipe 2' devra apparaître plus tard.
@@ -27,11 +27,12 @@ en suivant les étapes ci-dessous.
     avec self.frame, une largeur de 20 et une hauteur de 10. Packez la zone.
     -> Test : Les zones de texte apparaîtront à l'étape suivante.
 
-7.  Affichage des équipes (MainWindow) : Instanciez deux TeamTextArea ('Equipe 1' et 'Equipe 2')
-    dans self.teams_frame.
+7.  Affichage des équipes (TeamFrame) : Instanciez deux TeamTextArea ('Equipe 1' et 'Equipe 2')
+    dans TeamFrame.
     -> Test : Deux colonnes avec titres et zones de texte vides doivent apparaître.
 
-8.  Boutons (MainWindow) : Créez un Frame pour les boutons. Instanciez deux ButtonAddFootballer.
+8.  Boutons (ActionButtonsFrame) : Instanciez deux ButtonAddFootballer dans ActionButtonsFrame.
+    Instanciez ActionButtonsFrame dans MainWindow.
     -> Test : Deux boutons doivent apparaître en bas.
 
 9.  Configuration Bouton (ButtonAddFootballer) : Dans __init__, appelez super().__init__
